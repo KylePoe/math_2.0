@@ -1,0 +1,86 @@
+% beamerthemeUCBerkeley.sty v1.2 (January 5, 2021)
+% by Overleaf (LianTze Lim, Ryan Looney)
+
+%Penn adaptation by Andrea Ceolin (March 16, 2021)
+%Vidal lab adaptation by vidal lab
+
+\ProvidesPackage{beamerthemeVidal}
+
+\RequirePackage{silence}
+\WarningsOff[mathdesign/mdbch]
+
+\RequirePackage{etoolbox}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+
+\RequirePackage{fontspec}
+\setromanfont{Georgia}
+% Local change (talk copy only): fall back to TeX Live's bundled Open Sans
+% files when the font is not installed system-wide. Overleaf takes the first branch.
+\IfFontExistsTF{Open Sans}{%
+  \setsansfont[Scale=MatchLowercase]{Open Sans}%
+}{%
+  \setsansfont[Scale=MatchLowercase, Extension=.ttf,
+    UprightFont=OpenSans-Regular, BoldFont=OpenSans-Bold,
+    ItalicFont=OpenSans-Italic, BoldItalicFont=OpenSans-BoldItalic]{OpenSans}%
+}
+
+\RequirePackage{tikz}
+
+%These are the official Penn colors
+\definecolor{PennRed}{RGB}{153,0,0}
+\definecolor{PennBlue}{RGB}{1,31,91}
+
+%These Gold and Green would match well with the official Penn colors (courtesy of Jordan Kodner)
+\definecolor{PennGold}{RGB}{179,141,25}
+\definecolor{PennGreen}{RGB}{51,111,0}
+
+% Text margins: the left margin (0.35cm, half the pptx inset) equals the
+% frame title inset, so title, body and footer share one left edge.
+\setbeamersize{text margin left=0.35cm, text margin right=0.70cm}
+
+% Input slide formatting
+\input{slide_formats/title_slide}
+\input{slide_formats/content_slide}
+
+
+\setbeamertemplate{frametitle}{\vskip0.2\paperheight\insertframetitle} 
+\setbeamerfont{frametitle}{family=\sffamily,series=\mdseries,size=\fontsize{15pt}{18pt}\selectfont}
+\setbeamerfont{block title}{family=\sffamily,size=\large}
+\setbeamercolor{titlelike}{fg=black}
+% \setbeamercolor{normal text}{fg=PennBlue}
+% \setbeamercolor{structure}{fg=PennBlue}
+% \setbeamercolor{block title}{fg=PennRed}
+
+
+% Set font and color for the title page
+\setbeamerfont{title}{family=\sffamily,size=\Huge}
+\setbeamercolor{title}{fg=white}
+\setbeamerfont{subtitle}{family=\sffamily,size=\Large}
+\setbeamercolor{subtitle}{fg=white!80!PennBlue}
+\setbeamerfont{author}{size=\large}
+\setbeamercolor{author}{fg=white}
+\setbeamerfont{institute}{size=\small}
+\setbeamercolor{institute}{fg=white!85!PennBlue}
+\setbeamerfont{date}{size=\small}
+\setbeamercolor{date}{fg=white!85!PennBlue}
+
+% Footline: breadcrumb, hairlines and slide number (layout in slide_formats/content_slide.tex)
+\setbeamerfont{footline}{family=\sffamily,size=\scriptsize}
+\setbeamercolor{footline}{fg=black!55}
+\setbeamerfont{page number in head/foot}{family=\sffamily,size=\footnotesize}
+\setbeamercolor{page number in head/foot}{fg=PennBlue}
+\colorlet{vidalfootrule}{black!15}
+% Source credits (\slidesources)
+\setbeamerfont{slide sources}{family=\sffamily,size=\tiny}
+\setbeamercolor{slide sources}{fg=black!50}
+
+\setbeamertemplate{itemize item}{\textbullet}
+\setbeamertemplate{itemize subitem}{--}
+\setbeamertemplate{itemize subsubitem}{\textbullet}
+\setlength{\leftmargini}{1.25em}
+\setlength{\leftmarginii}{1em}
+\setlength{\leftmarginiii}{1em}
+
+% % \pgfdeclareimage[width=1.01\paperwidth]{blueslope}{blueslope}
+% \pgfdeclareimage[height=0.1\paperheight]{logo}{Penn.png}

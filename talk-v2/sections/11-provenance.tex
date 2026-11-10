@@ -1,0 +1,68 @@
+% Part I > Provenance is unknowable. Steps 3-4 of the integrity argument
+% (AUDIT.md s2): disclosure does not hold, so a check that depends on who wrote
+% a proof will fail; of the institutional responses, only verification scales.
+% Built from the disclosure row of the Credit table and the response columns
+% of the Review capacity table in talk/.
+\section{Provenance is unknowable}
+
+% [1.5 min] Step 3. Three measurements that disclosure does not hold.
+% 17.5%: Martin, Oct 2026, apparent AI writing with no disclosure of AI
+% writing; the detector flags only 50.5% of papers that DO disclose, so this
+% is likely an undercount (research/03, s2.3). 22.5%: Kim et al., ICML 2026
+% trial. Journal policies: 5,114 journals, arXiv 2512.06705, via AcadMathSci s1.1.
+\begin{frame}{Who wrote it?}
+  \centering
+  \begin{tikzpicture}[x=1cm, y=1cm,
+      bignum/.style={anchor=north west, inner sep=0pt, font=\sffamily\bfseries\fontsize{26}{28}\selectfont},
+      tile/.style={anchor=north west, text width=4.1cm, align=flush left, inner sep=0pt,
+                   font=\sffamily\small, text=black!80},
+      tsrc/.style={anchor=north west, text width=4.1cm, align=flush left, inner sep=0pt,
+                   font=\sffamily\scriptsize, text=black!50}]
+    \useasboundingbox (0,0) rectangle (14.3,-5.9);
+    \foreach \x in {4.85, 9.7} \draw[black!12, line width=0.5pt] (\x,-0.1) -- (\x,-3.9);
+    % tile 1
+    \node[bignum, text=tlOrange] at (0.2,-0.1) {17.5\%};
+    \node[tile] at (0.2,-1.25) {of math preprints read as AI-written without saying so (Oct 2026).};
+    \node[tsrc] at (0.2,-2.55) {Likely an undercount: the detector flags only half of the papers that \emph{do} disclose. (Martin)};
+    % tile 2
+    \node[bignum, text=tlOrange] at (5.05,-0.1) {22.5\%};
+    \node[tile] at (5.05,-1.25) {of ICML 2026 reviewers used an LLM under a no-LLM policy.};
+    \node[tsrc] at (5.05,-2.55) {Randomized trial of review policies. (Kim et al.)};
+    % tile 3
+    \node[bignum, text=tlOrange] at (9.9,-0.1) {No effect};
+    \node[tile] at (9.9,-1.25) {AI-assisted writing grew at the same rate in journals with and without an AI policy.};
+    \node[tsrc] at (9.9,-2.55) {5,114 journals. (arXiv 2512.06705, via AcadMathSci)};
+    % conclusion
+    \draw[black!15, line width=0.4pt] (0,-4.35) -- (14.3,-4.35);
+    \node[anchor=north, text width=13.5cm, align=center, inner sep=0pt, font=\sffamily\small]
+      at (7.15,-4.75)
+      {\textbf{A check that depends on knowing who wrote the proof will fail.}\\[2pt]
+       The check has to read the proof, not the author.};
+  \end{tikzpicture}
+  \slidesources{K.~Martin, AI use in arXiv mathematics papers (3 Nov 2026) \textbullet{} Kim et al., arXiv 2609.19420 \textbullet{} arXiv 2512.06705, cited in AcadMathSci, Oct 2026 (\S1.1)}
+\end{frame}
+
+% [2 min] Step 4. The four kinds of response (research/03 s4), with whether each
+% holds up. Only verification scales with production and ignores provenance.
+% Rows are the response columns of talk/'s Credit and Review capacity tables,
+% regrouped by strategy.
+\begin{frame}{What institutions tried}
+  \footnotesize\sffamily
+  \renewcommand{\arraystretch}{1.35}
+  \begin{tabularx}{\linewidth}{@{}p{1.6cm}YYp{1.5cm}@{}}
+    \toprule
+    \tabhead{Strategy} & \tabhead{Examples} & \tabhead{Does it hold?} & \tabhead{Status}\\
+    \midrule
+    \rowhead{Restrict} & arXiv: two new submissions per submitter per month (1 Oct). Six probability journals paused. \emph{Phil.\ \& Public Affairs} bans AI-written papers
+      & Caps are a stopgap; the pauses ended 8 Nov. Bans depend on detection: ``welcome but unenforceable'' & \stpartial\\
+    \rowhead{Disclose} & Leiden Declaration (endorsed by the IMU); mandatory AI statements (Springer); SIAM AI policy v2.0
+      & Widely ignored (ICML: 22.5\%); no measurable effect on AI writing & \stpartial\\
+    \rowhead{Expand} & Paid, AI-assisted refereeing (Maltsev); credit for refereeing (AcadMathSci)
+      & Needs funding, and no venue yet trusts AI review with the deciding vote & \stopen\\
+    \rowhead{Verify} & Palomar, a registry of Lean-verified results (18 Aug). A proposed journal requiring Lean proofs (Guo, 17 Oct). AcadMathSci: assess correctness ``utilising AI and formalisation''
+      & Scales with production and does not depend on who wrote the proof. Still prototypes & \stopen\\
+    \bottomrule
+  \end{tabularx}\par\medskip
+  {\color{black!60}\scriptsize Only verification scales with production, and it is the least built.}
+  \slidesources{AcadMathSci, Oct 2026 (\S1.2, \S4.6, C.1) \textbullet{} Times Higher Education, May 2026 \textbullet{} Kim et al., arXiv 2609.19420 \textbullet{} Maltsev, Proofs \& Prompts \textbullet{} Tao, blog, 18 Aug and 17 Oct 2026}
+\end{frame}

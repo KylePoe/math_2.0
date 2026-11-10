@@ -1,0 +1,246 @@
+% Opening > An emerging paradigm
+\section{An emerging paradigm}
+
+% [1.5 min] Pre-AI history of formal proof as a guarantee. Three rows pair a
+% proof that left room for doubt (open circle) with the formal proof that
+% settled it (red square); the bar is the lag. Other milestones sit on the
+% axis. The AI era is only marked at the right end: slide 5 covers it.
+% Every date and quote is from the primary source credited on the right.
+\begin{frame}{Timeline: Formalization in the Pre-AI Era}
+  \centering
+  \begin{tikzpicture}[x=1cm, y=1cm, font=\sffamily\scriptsize,
+      doubt/.style={circle, draw=black!55, fill=white, line width=0.6pt, inner sep=0pt, minimum size=4.5pt},
+      formal/.style={rectangle, fill=PennRed, inner sep=0pt, minimum size=4.5pt},
+      lag/.style={line width=2.4pt, draw=black!12},
+      lagtext/.style={font=\sffamily\scriptsize\bfseries, text=black!45, fill=white, inner sep=1pt},
+      doubttext/.style={align=left, text=black!65, inner sep=0pt},
+      formaltext/.style={align=left, text=PennRed, inner sep=0pt},
+      landmark/.style={circle, fill=black!55, inner sep=0pt, minimum size=3pt},
+      leader/.style={draw=black!25, line width=0.4pt},
+      ltext/.style={text=black!65, inner sep=0pt}]
+    % bounding box = visible extent of the diagram, so it centres on the page
+    \useasboundingbox (0.87,-0.25) rectangle (14.38,-6.0);
+
+    % ---- row labels and legend (left column) ---------------------------------
+    \node[lane=black!70] at (2.85,-0.7) {Four colour\\theorem};
+    \node[lane=black!70] at (2.85,-2.1) {Kepler\\conjecture};
+    \node[lane=black!70] at (2.85,-3.5) {Liquid Tensor\\Experiment};
+    \node[doubt] at (1.0,-4.45) {};
+    \node[anchor=west, text=black!65] at (1.15,-4.45) {proof in doubt};
+    \node[formal] at (1.0,-4.8) {};
+    \node[anchor=west, text=PennRed] at (1.15,-4.8) {formal proof};
+
+    % ---- timeline: x = 3.0cm + 0.21cm per year after 1974 ----------------------
+    \begin{scope}[xshift=3.0cm, x=0.21cm]
+      % axis, decade ticks, and the AI era at the right end
+      \draw[line width=0.5pt, draw=black!45] (0,-4.75) -- ({2025-1974},-4.75);
+      \draw[-Stealth, line width=1.4pt, draw=PennRed] ({2025-1974},-4.75) -- ({2028-1974},-4.75);
+      \node[font=\sffamily\scriptsize\bfseries, text=PennRed, anchor=south] at ({2026.5-1974},-4.68) {AI era};
+      \foreach \y in {1980,1990,2000,2010,2020} {
+        \draw[draw=black!45, line width=0.5pt] ({\y-1974},-4.75) -- ({\y-1974},-4.85);
+        \node[note, anchor=north] at ({\y-1974},-4.87) {\y};
+      }
+
+      % ---- (1) four colour theorem: 1976 -> 2005 ------------------------------
+      \draw[lag] (2,-0.7) -- (31,-0.7);
+      \node[lagtext] at (16.5,-0.7) {29 years};
+      \node[doubt] at (2,-0.7) {};
+      \node[formal] at (31,-0.7) {};
+      \node[doubttext, anchor=south west] at (1.6,-0.53)
+        {\textbf{1976} Appel--Haken: a computer case analysis too large to check by hand};
+      \node[formaltext, anchor=north west] at (30.6,-0.87)
+        {\textbf{2005} fully checked in Coq (Gonthier)};
+
+      % ---- (2) Kepler conjecture: Sep 1998 -> Aug 2014 ------------------------
+      \draw[lag] (24.67,-2.1) -- (40.61,-2.1);
+      \node[lagtext] at (32.64,-2.1) {16 years};
+      \node[doubt] at (24.67,-2.1) {};
+      \node[formal] at (40.61,-2.1) {};
+      \node[doubttext, anchor=south west] at (24.27,-1.93)
+        {\textbf{1998} Hales submits a computer-assisted proof; published 2005\\
+         ``without complete certification from the referees''};
+      \node[formaltext, anchor=north east, align=right] at (41.01,-2.27)
+        {\textbf{2014} Flyspeck: formal proof in HOL Light and Isabelle};
+
+      % ---- (3) Liquid Tensor Experiment: Dec 2020 -> Jul 2022 -----------------
+      \draw[lag] (46.93,-3.5) -- (48.54,-3.5);
+      \node[doubt] at (46.93,-3.5) {};
+      \node[formal] at (48.54,-3.5) {};
+      \node[lagtext, anchor=west] at (49.2,-3.5) {19 months};
+      \node[doubttext, anchor=south east, align=right] at (47.33,-3.33)
+        {\textbf{Dec 2020} Scholze on his own proof:\\``being 99.9\% sure is not enough''};
+      \node[formaltext, anchor=north east, align=right] at (48.94,-3.67)
+        {\textbf{Jul 2022} checked in Lean (led by Commelin)};
+
+      % ---- other milestones on the axis --------------------------------------
+      % Labels hang from leaders on three levels (y=-5.25, -5.55, -5.85). The
+      % right-hand labels run leftwards and step down from left to right, so
+      % no leader crosses a label.
+      \foreach \t/\lev in {3.17/-5.85, 38.72/-5.25, 43.5/-5.55, 49.93/-5.85} {
+        \draw[leader] (\t,-4.75) -- (\t,\lev+0.05);
+        \node[landmark] at (\t,-4.75) {};
+      }
+      \node[ltext, anchor=north west] at (3.17,-5.85)
+        {\textbf{1977} Landau's \emph{Grundlagen} in Automath (Jutting)};
+      \node[ltext, anchor=north east] at (38.72,-5.25)
+        {\textbf{2012} Feit--Thompson in Coq, a six-year project};
+      \node[ltext, anchor=north east] at (43.5,-5.55)
+        {\textbf{2017} Mathlib begins (Lean)};
+      \node[ltext, anchor=north east] at (49.93,-5.85)
+        {\textbf{2023} PFR in Lean, within a month of the preprint};
+    \end{scope}
+  \end{tikzpicture}
+  % Full references: L.S. van Benthem Jutting, Checking Landau's "Grundlagen" in the
+  % AUTOMATH system, PhD thesis, TH Eindhoven, 1 Mar 1977 (ir.cwi.nl/pub/32108).
+  % G. Gonthier, A computer-checked proof of the Four Colour Theorem, Microsoft
+  % Research, 2005. T.C. Hales, A proof of the Kepler conjecture, Ann. Math. 162
+  % (2005) 1065-1185 (received 4 Sep 1998, accepted 16 Aug 2005). T. Hales et al.,
+  % A formal proof of the Kepler conjecture, arXiv:1501.02155 (quote: "published
+  % without complete certification from the referees"); github.com/flyspeck/flyspeck
+  % ("completed August 10, 2014"). G. Gonthier et al., A Machine-Checked Proof of
+  % the Odd Order Theorem, ITP 2013 ("six-year collaborative effort"). P. Scholze,
+  % Liquid tensor experiment, Xena Project blog, 5 Dec 2020. Completion of the
+  % Liquid Tensor Experiment, leanprover-community blog, 15 Jul 2022 (completed
+  % 14 Jul 2022; led by J. Commelin). The mathlib Community, The Lean Mathematical
+  % Library, CPP 2020 ("In the summer of 2017 ... This code became the base for
+  % mathlib"). Gowers, Green, Manners, Tao, On a conjecture of Marton,
+  % arXiv:2311.05762 (9 Nov 2023); T. Tao, blog comment, 5 Dec 2023 ("The project
+  % has now completed its primary goals").
+  \slidesources{Sources: Jutting, thesis (1977) \textbullet{} Gonthier, MSR report (2005) \textbullet{} Hales, Annals 162 (2005); Hales et al., arXiv:1501.02155; Flyspeck repo \textbullet{} Gonthier et al., ITP 2013 \textbullet{} Scholze, Xena blog (Dec 2020); Lean blog (Jul 2022) \textbullet{} mathlib Community, CPP 2020 \textbullet{} Gowers et al., arXiv:2311.05762; Tao, blog (Dec 2023)}
+\end{frame}
+
+% [1 min] The AcadMathSci timeline (report Fig. 1), redrawn horizontally across
+% two pages: April--September, then October. Colours follow the original
+% categories. PREVIEW: layout still under review with Kyle.
+\begin{frame}{Timeline: AI Transforms the Mathematical Sciences}
+  \centering
+  \begin{tikzpicture}[x=1cm, y=1cm,
+      tlmonth/.style={font=\sffamily\bfseries\fontsize{5.5}{6.5}\selectfont, text=tlAxis!80!black}]
+    \useasboundingbox (0,-0.8) rectangle (14.9,5.73);
+    % month bands and labels
+    \fill[tlBand] (0.00,0) rectangle (1.15,5.73);
+    \node[tlmonth] at (0.57,-0.24) {APR};
+    \node[tlmonth] at (2.15,-0.24) {MAY};
+    \fill[tlBand] (3.15,0) rectangle (5.30,5.73);
+    \node[tlmonth] at (4.22,-0.24) {JUN};
+    \node[tlmonth] at (6.38,-0.24) {JUL};
+    \fill[tlBand] (7.45,0) rectangle (9.60,5.73);
+    \node[tlmonth] at (8.52,-0.24) {AUG};
+    \node[tlmonth] at (12.25,-0.24) {SEP};
+    % axis
+    \draw[line width=1.6pt, draw=tlAxis] (0,0) -- (14.9,0);
+    % legend
+    \foreach \c/\t [count=\k] in {tlBlue/AI results, tlGreen/Community responses,
+                                  tlOrange/Publishing and verification, tlPurple/Access and funding} {
+      \node[tldot=\c] at ({0.15+3.3*(\k-1)},-0.62) {};
+      \node[anchor=west, font=\sffamily\fontsize{5.5}{6.5}\selectfont, text=black!70]
+        at ({0.27+3.3*(\k-1)},-0.62) {\t};
+    }
+    % events: \tlevent{dot x}{leader end x}{box centre x}{box bottom y}{colour}{width}{title}{description}
+      \tlevent{0.78}{0.78}{0.98}{0.30}{tlGreen}{2.6cm}
+        {27 Apr · AI Leads Network launched}
+        {Academy for the Mathematical Sciences network of departmental AI leads (Birmingham)}
+      \tlevent{2.41}{2.41}{1.79}{1.72}{tlBlue}{2.6cm}
+        {20 May · Erdős unit-distance conjecture}
+        {Disproved by an internal model (OpenAI); Gowers: “a milestone”}
+      \tlevent{3.26}{3.26}{2.54}{2.92}{tlGreen}{2.6cm}
+        {2 Jun · Leiden Declaration}
+        {Conduct standards for AI-assisted mathematics; later endorsed by the IMU}
+      \tlevent{3.97}{3.97}{3.46}{4.34}{tlPurple}{2.6cm}
+        {12 Jun · Frontier models suspended}
+        {US export controls bar foreign nationals for 18 days; restored 1 July}
+      \tlevent{6.58}{6.58}{5.45}{0.30}{tlBlue}{2.6cm}
+        {19 Jul · AI counterexamples}
+        {Jacobian conjecture fails in dimension 3; question of Grothendieck answered (July)}
+      \tlevent{6.93}{6.93}{5.99}{1.72}{tlGreen}{2.6cm}
+        {24 Jul · Tao: “proof abundance”}
+        {ICM 2026 public lecture, Philadelphia}
+      \tlevent{8.11}{7.42}{6.29}{2.92}{tlBlue}{2.6cm}
+        {10 Aug · Riemann zeta zeros}
+        {Proven share on the critical line raised from 41.6\% to 67.2\% (Anthropic)}
+      \tlevent{8.66}{7.73}{6.59}{4.34}{tlOrange}{2.6cm}
+        {18 Aug · Palomar registry}
+        {Registry of Lean-verified results (Tao, Lean FRO, ICARM)}
+      \tlevent{10.22}{10.22}{9.47}{2.92}{tlBlue}{2.6cm}
+        {4 Sep · Fermat’s Last Theorem in Lean}
+        {AI agents complete formalisation in 11 days (Anthropic)}
+      \tlevent{10.92}{10.92}{10.99}{4.34}{tlBlue}{2.6cm}
+        {8 Sep · Navier–Stokes blow-up}
+        {Forced case; \textasciitilde10,000 agents, 88 hours (OpenAI)}
+      \tlevent{11.46}{11.46}{12.53}{1.72}{tlGreen}{2.6cm}
+        {11 Sep · “A Severe Misalignment”}
+        {Statement by 28 Fields Medallists}
+      \tlevent{13.75}{13.75}{13.15}{0.30}{tlGreen}{2.6cm}
+        {24 Sep · ICIAM statement}
+        {“Discovery, Understanding and Trust”}
+      \tlevent{14.63}{14.60}{13.47}{2.92}{tlGreen}{2.6cm}
+        {29 Sep · AGMAI release guidelines}
+        {Advisory Group on Mathematics and AI, for AI labs}
+  \end{tikzpicture}
+  \slidesources{Adapted from Reisinger et al., \emph{The Mathematical Sciences in an AI-enabled World}, AcadMathSci, pre-publication draft, Oct 2026, Fig.~1 (April--September 2026)}
+\end{frame}
+
+\begin{frame}{Timeline: AI Transforms the Mathematical Sciences}
+  \centering
+  \begin{tikzpicture}[x=1cm, y=1cm,
+      tlmonth/.style={font=\sffamily\bfseries\fontsize{5.5}{6.5}\selectfont, text=tlAxis!80!black}]
+    \useasboundingbox (0,-0.8) rectangle (14.9,5.95);
+    % month bands and labels
+    \fill[tlBand] (0.00,0) rectangle (3.36,5.95);
+    \node[tlmonth] at (1.68,-0.24) {1--7 OCT};
+    \node[tlmonth] at (5.05,-0.24) {8--14 OCT};
+    \fill[tlBand] (6.73,0) rectangle (10.09,5.95);
+    \node[tlmonth] at (8.41,-0.24) {15--21 OCT};
+    \node[tlmonth] at (11.78,-0.24) {22--28 OCT};
+    \fill[tlBand] (13.46,0) rectangle (14.90,5.95);
+    \node[tlmonth] at (14.18,-0.24) {29--31 OCT};
+    % axis
+    \draw[line width=1.6pt, draw=tlAxis] (0,0) -- (14.9,0);
+    % legend
+    \foreach \c/\t [count=\k] in {tlBlue/AI results, tlGreen/Community responses,
+                                  tlOrange/Publishing and verification, tlPurple/Access and funding} {
+      \node[tldot=\c] at ({0.15+3.3*(\k-1)},-0.62) {};
+      \node[anchor=west, font=\sffamily\fontsize{5.5}{6.5}\selectfont, text=black!70]
+        at ({0.27+3.3*(\k-1)},-0.62) {\t};
+    }
+    % events: \tlevent{dot x}{leader end x}{box centre x}{box bottom y}{colour}{width}{title}{description}
+      \tlevent{0.24}{0.27}{1.60}{4.79}{tlOrange}{3.0cm}
+        {1 Oct · arXiv caps submissions}
+        {Two per submitter per month}
+      \tlevent{2.64}{2.64}{1.95}{3.59}{tlBlue}{3.0cm}
+        {6 Oct · 719 manuscripts released}
+        {372 result families (OpenAI); three withdrawn next day}
+      \tlevent{2.94}{3.79}{5.13}{4.79}{tlOrange}{3.0cm}
+        {6 Oct · Navier–Stokes “lost in translation”}
+        {Lean statement differs from the paper (Bastounis, Circelli, Hansen)}
+      \tlevent{3.24}{3.80}{5.13}{1.94}{tlPurple}{3.0cm}
+        {6 Oct · AI for Math Fund, \$17.1M}
+        {XTX Markets and Renaissance Philanthropy; 22 projects, fund now \$35.1M}
+      \tlevent{6.49}{6.49}{5.33}{0.30}{tlBlue}{3.0cm}
+        {14 Oct · First Proof, batch 3}
+        {Best system solves 9 of 10 research problems}
+      \tlevent{6.97}{6.97}{5.76}{3.59}{tlPurple}{3.0cm}
+        {15 Oct · Simons Foundation, \$15M}
+        {Initiative with Anthropic and OpenAI to evaluate AI-produced results}
+      \tlevent{7.45}{7.45}{8.76}{4.79}{tlPurple}{3.0cm}
+        {16 Oct · SAIR Open Math OS}
+        {Free open models for academics; first step to an open maths model}
+      \tlevent{8.89}{8.89}{9.21}{3.59}{tlOrange}{3.0cm}
+        {19 Oct · Probability journals pause}
+        {Six journals suspend new submissions until 8 November}
+      \tlevent{12.26}{12.26}{11.01}{0.30}{tlBlue}{3.0cm}
+        {26 Oct · OpenAI: three new results}
+        {Claims local smoothing (hence Kakeya) in all dimensions, ETH false, 4D gauge theory; released via expert “shepherds”}
+      \tlevent{12.74}{12.74}{11.96}{1.94}{tlPurple}{3.0cm}
+        {27 Oct · XTX Markets: £5.5M in grants}
+        {£5M for a Langlands Lab for AI-assisted mathematics at Imperial (Buzzard); £500k to ICMS on AI access and training needs}
+      \tlevent{13.70}{13.70}{13.21}{4.79}{tlGreen}{3.0cm}
+        {29 Oct · Royal Society event}
+        {“Mathematics in the Age of AI”, London and live-streamed}
+  \end{tikzpicture}
+  \slidesources{Adapted from Reisinger et al., \emph{The Mathematical Sciences in an AI-enabled World}, AcadMathSci, pre-publication draft, Oct 2026, Fig.~1 (October 2026)}
+\end{frame}
+
+
+
+

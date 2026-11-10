@@ -1,0 +1,11 @@
+\beamer@sectionintoc {1}{Navier--Stokes}{2}{1}{1}
+\beamer@sectionintoc {2}{An emerging paradigm}{6}{1}{2}
+\beamer@sectionintoc {3}{Math 2.0}{9}{1}{3}
+\beamer@sectionintoc {4}{Checking did not scale}{12}{2}{4}
+\beamer@sectionintoc {5}{Provenance is unknowable}{14}{2}{5}
+\beamer@sectionintoc {6}{Certificates}{16}{2}{6}
+\beamer@sectionintoc {7}{Learning theory}{23}{3}{7}
+\beamer@sectionintoc {8}{The workflow}{26}{3}{8}
+\beamer@sectionintoc {9}{In the lab}{31}{3}{9}
+\beamer@sectionintoc {10}{Closing}{35}{4}{10}
+\beamer@sectionintoc {11}{Backup}{40}{5}{11}

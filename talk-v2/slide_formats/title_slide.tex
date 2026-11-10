@@ -1,0 +1,35 @@
+% Title Slide Format
+% Geometry follows the pptx title slide (slide1, "1_Divider Slide" layout) on a
+% 16cm x 9cm page: text block right-aligned against a white rule at 50% width,
+% both starting 44% of the way down the slide. The block is placed with TikZ, so
+% the spacing no longer depends on the length of the title.
+\usepackage{ragged2e} % For text justification
+
+\newcommand{\titleslide}{
+    \setbeamertemplate{background}{%
+            \includegraphics[width=\paperwidth,height=\paperheight]{PennEngineering-template-2023/ppt/media/image2.jpg}%
+    }
+
+    \setbeamertemplate{title page}{%
+        \begin{tikzpicture}[remember picture, overlay]
+            % Text block: right edge just left of the rule, top level with it.
+            \node[anchor=north east, inner sep=0pt, text width=6.2cm, align=right]
+                at ([xshift=7.6cm, yshift=-3.6cm]current page.north west) {%
+                    {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}%
+                    \ifx\insertsubtitle\@empty\else
+                        \vspace{0.15cm}%
+                        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+                    \fi
+                    \vspace{0.45cm}%
+                    {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}%
+                    \vspace{0.1cm}%
+                    {\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}%
+                    \vspace{0.1cm}%
+                    {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}%
+                };
+            % Vertical rule
+            \draw[white, line width=1pt]
+                ([xshift=7.98cm, yshift=-3.6cm]current page.north west) -- ++(0,-4.4cm);
+        \end{tikzpicture}%
+    }
+}

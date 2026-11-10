@@ -1,0 +1,139 @@
+%% Math 2.0: Theory and Practice
+%% Requires compilation with XeLaTeX or LuaLaTeX:  latexmk main.tex  (see .latexmkrc)
+\documentclass[10pt,t,aspectratio=169]{beamer}
+\usetheme{Vidal}
+\input{slide_formats/section_slide}
+\usetikzlibrary{shadows, arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{booktabs, tabularx}
+
+% Problem / response tables (Part I). Y = ragged-right X column.
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\rowhead}[1]{\leavevmode{\bfseries\color{black}\hyphenpenalty=10000 #1}}
+\newcommand{\tabhead}[1]{\leavevmode{\sffamily\bfseries\color{black!55}#1}}
+% Status labels: a coloured dot plus a word, so status is never colour alone.
+\newcommand{\stopen}{\leavevmode{\color{PennRed}\textbullet}\,open}
+\newcommand{\stpartial}{\leavevmode{\color{PennGold}\textbullet}\,partial}
+\newcommand{\stdone}{\leavevmode{\color{PennGreen}\textbullet}\,in place}
+
+% Diagram styles (pipeline diagrams and similar).
+\tikzset{
+  stage/.style={draw=#1!55, fill=#1!7, rounded corners=2pt, line width=0.5pt,
+                minimum width=2.2cm, minimum height=0.95cm, align=center, inner sep=2pt},
+  stage/.default=black,
+  note/.style={font=\sffamily\scriptsize, text=black!55},
+  flow/.style={-Stealth, line width=0.6pt, draw=#1!60},
+  flow/.default=black,
+  colhead/.style={font=\sffamily\scriptsize\bfseries, text=black!45},
+  lane/.style={font=\sffamily\scriptsize\bfseries, align=right, anchor=east, text=#1},
+  span/.style={|-|, line width=0.4pt, draw=black!35},
+}
+
+% Collage card: an image on a white mat with a thin border and a soft shadow.
+% \collagecard[<tikz options>]{<width>}{<image>} inside a tikzpicture node.
+\tikzset{collagecard/.style={inner sep=1.2pt, fill=white, draw=black!18, line width=0.3pt,
+    drop shadow={shadow xshift=0.6pt, shadow yshift=-0.8pt, opacity=0.25}}}
+
+% Event timeline (AcadMathSci timeline slides). Colours are sampled from the
+% report's Figure 1 so the categories keep their original scheme.
+\definecolor{tlBlue}{RGB}{29,84,158}     % AI results
+\definecolor{tlGreen}{RGB}{41,114,70}    % community responses
+\definecolor{tlOrange}{RGB}{186,75,26}   % publishing and verification
+\definecolor{tlPurple}{RGB}{112,55,150}  % access and funding
+\definecolor{tlBand}{RGB}{240,242,245}   % alternating month bands
+\definecolor{tlAxis}{RGB}{143,153,163}   % axis
+\newcommand{\tltitlefont}{\sffamily\bfseries\fontsize{6}{7}\selectfont}
+\newcommand{\tldescfont}{\sffamily\fontsize{5.3}{6.3}\selectfont}
+\tikzset{
+  % event box: white card with a coloured top edge, thin border, soft shadow
+  tlbox/.style={draw=#1!40, fill=white, line width=0.4pt, rounded corners=1.2pt,
+                inner xsep=2.2pt, inner ysep=2.4pt, align=left,
+                drop shadow={shadow xshift=0.5pt, shadow yshift=-0.7pt, opacity=0.3},
+                path picture={\fill[#1] (path picture bounding box.north west)
+                              rectangle ([yshift=-1.2pt]path picture bounding box.north east);}},
+  tldot/.style={circle, fill=#1, draw=white, line width=0.6pt, inner sep=0pt, minimum size=4.6pt},
+  tlleader/.style={draw=#1!65, line width=0.5pt},
+}
+% \tlevent{dot x}{leader end x}{box centre x}{box bottom y}{colour}{text width}{title}{description}
+% Draws the leader from the dot on the axis (y=0) to the box's bottom edge, the
+% box, and the dot.
+\newcommand{\tlevent}[8]{%
+  \draw[tlleader=#5] (#1,0) -- (#2,#4);
+  \node[tlbox=#5, text width=#6, anchor=south] at (#3,#4)
+    {{\tltitlefont\color{#5}#7\par}\vspace{0.6pt}{\tldescfont\color{black!75}#8\par}};
+  \node[tldot=#5] at (#1,0) {};
+}
+% Layer cards (three layers of checking): \node[layer=<colour>] ...; label \node[lbl=<colour>].
+\tikzset{
+  layer/.style={draw=#1!55, fill=#1!6, line width=0.6pt, rounded corners=2pt,
+                minimum height=1.45cm, text width=9.2cm, inner sep=0.25cm, align=left,
+                font=\sffamily\footnotesize},
+  lbl/.style={font=\sffamily\small\bfseries, text=#1, anchor=east, align=right},
+}
+% Legend dot for inline use.
+\newcommand{\tllegdot}[1]{\tikz[baseline=-0.6ex]\node[tldot=#1]{};}
+
+% ---------------------------------------------------------------------------
+% Skeleton helpers. \stub{minutes}{purpose} prints a grey planning note on the
+% slide; set \stubsfalse to hide every note before giving the talk.
+% ---------------------------------------------------------------------------
+\newif\ifstubs
+\stubstrue
+\newcommand{\stub}[2]{%
+  \ifstubs{\color{gray}\small\itshape [\,#1 min\,]\quad #2\par}\fi}
+
+% Part names, used by the divider slides and the overview slide.
+\newcommand{\partnameone}{Society}
+\newcommand{\partnametwo}{The Lab}
+
+\title[Math 2.0]{Math 2.0}
+\subtitle{From Society to the Lab}
+\author{Kyle Poe}
+\institute{Vidal Lab, University of Pennsylvania}
+\date{November 11, 2026}
+
+\begin{document}
+
+\titleslide{
+  \begin{frame}
+    \titlepage
+  \end{frame}
+}
+
+\contentslide
+
+% Time budget: 45 min content + 15 min discussion.
+% The talk is a tree mapped onto beamer's levels:
+%   \part = Opening / Part I / Part II / Closing
+%   \section, \subsection = the nodes below them
+% Beamer numbers the parts 1--4, so Part I is part=2 and Part II is part=3
+% in \tableofcontents (see the overview slide in sections/02-opener-math-2).
+% Section files hold one frame per planned slide, with titles as working labels.
+
+\part{Opening}                                 %  7 min
+\input{sections/00-opener-navier-stokes}       %  3   min
+\input{sections/01-opener-paradigm}            %  2.5 min
+\input{sections/02-opener-math-2}              %  1.5 min
+
+\part{\partnameone}                            % 15 min
+\sectionslide{Part I}{\partnameone}
+\input{sections/10-rampant-ai-use}              %  1.5 min  (the fact of rampant AI use)
+\input{sections/11-community-response}         %  6.5 min  (the response exposes the problems)
+\input{sections/12-formalization-remedy}       %  5.5 min  (what formalization fixes; what stays open)
+
+\part{\partnametwo}                            % 20 min
+\sectionslide{Part II}{\partnametwo}
+\input{sections/20-our-field}                  %  2.5 min
+\input{sections/21-how-it-is-done}             %  6   min
+\input{sections/22-can-do-layers}              %  7.5 min  (What we can do > The three layers)
+\input{sections/23-can-do-lab}                 %  4   min  (What we can do > In the lab)
+
+\part{Closing}                                 %  3 min
+\sectionslide{}{Closing}
+\input{sections/30-closing}                    %  3   min
+
+\appendix
+\input{sections/99-backup}
+
+\end{document}

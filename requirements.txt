@@ -1,0 +1,7 @@
+anthropic>=2.6.0
+requests
+beautifulsoup4
+pandas
+pydantic>=2
+matplotlib
+scikit-learn

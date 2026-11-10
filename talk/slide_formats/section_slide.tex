@@ -1,0 +1,25 @@
+% Section Divider Slide Format
+% Background from the "2_Divider Slide" layout in PennEngineering-template-2023.pptx
+% (slideLayout9, image4.jpg). The title sits exactly on the page's centre; the
+% optional label ("Part I") hangs just above it, so every divider's title is in
+% the same place whether or not it has a label.
+% Usage: \sectionslide{Part I}{Society}, or \sectionslide{}{Closing} for no label.
+\def\vidal@sectionlabelgap{0.35cm}  % gap between label and title
+\newcommand{\sectionslide}[2]{%
+    {%
+    \setbeamertemplate{background}{%
+        \includegraphics[width=\paperwidth,height=\paperheight]{PennEngineering-template-2023/ppt/media/image4.jpg}%
+    }%
+    \setbeamertemplate{footline}{}%
+    \begin{frame}[plain]
+        \begin{tikzpicture}[remember picture, overlay]
+            \node[anchor=center, inner sep=0pt, align=center, text width=0.8\paperwidth]
+                (vidal@sectiontitle) at (current page.center)
+                {\usebeamerfont{title}\color{white}#2};
+            \node[anchor=south, inner sep=0pt, align=center]
+                at ([yshift=\vidal@sectionlabelgap]vidal@sectiontitle.north)
+                {\usefont{TU}{\sfdefault}{m}{n}\fontsize{14}{16}\selectfont\color{white!80!PennBlue}#1};
+        \end{tikzpicture}%
+    \end{frame}
+    }%
+}

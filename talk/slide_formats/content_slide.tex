@@ -1,0 +1,123 @@
+% Content Slide Format
+%
+% Geometry follows the pptx "1_Title and Content" layout (slideLayout2) and the
+% slide master, converted to the 16cm x 9cm beamer page:
+%   title band     0 -- 1.24cm from the top, title text vertically centred,
+%                  starting 0.35cm from the left (pptx: 24pt)
+%   colour line    1.24cm from the top, 95% of the page width, 0.083cm thick
+%   body           starts 1.66cm from the top; text margins 0.35cm left, 0.70cm right
+%                  (left margin level with the title text)
+%   footer         bottom 0.56cm (two lines of footer text), hairline on top;
+%                  text and logo centred on its midline (compressed from the pptx)
+%   logo           0.42cm tall, 0.22cm from the right
+% Title band and footer are drawn with TikZ at absolute positions, so they do
+% not move with the content of individual slides.
+
+% ---- Geometry (edit here) --------------------------------------------------
+\def\vidal@titlex{0.35cm}       % title text, from the left edge (= body left margin)
+\def\vidal@titleband{1.24cm}    % height of the title band = top of colour line
+\def\vidal@titlemid{0.62cm}     % vertical centre of the title text (half the band)
+\def\vidal@titlewidth{14.95cm}  % title text width before wrapping (= text width)
+\def\vidal@linewidth{0.95}      % colour line length, fraction of page width
+\def\vidal@linethick{0.083cm}
+\def\vidal@bodytop{1.66cm}      % top of the body, from the top edge
+\def\vidal@footh{0.56cm}        % footer height: two lines of footer text
+                                % (\scriptsize, 8pt baselineskip = 16pt)
+\def\vidal@footmid{0.28cm}      % footer midline, from the bottom edge (half of \vidal@footh)
+\def\vidal@logoh{0.42cm}        % logo height (fits the footer with a small margin)
+\def\vidal@logox{0.22cm}        % logo, from the right edge
+\def\vidal@rulegap{0.30cm}      % gap on each side of a footer divider
+\def\vidal@foottextx{0.35cm}    % footer text, from the left edge (= title text)
+\def\vidal@footbase{0.074cm}    % footer baseline sits this far below the midline (centres the cap height)
+\def\vidal@divh{0.15cm}         % half-height of the short footer dividers
+
+% ---- Breadcrumb ------------------------------------------------------------
+% Part > section > subsection, skipping empty levels. The part is set in the
+% accent colour; deeper levels in the footer grey.
+\newcommand{\vidal@sep}{{\color{vidalfootrule!300}\enspace\guilsinglright\enspace}}
+\newcommand{\vidalbreadcrumb}{%
+    \ifdefempty{\insertpart}{}{{\color{PennRed}\insertpart}}%
+    \ifdefempty{\insertsection}{}{\vidal@sep\insertsection}%
+    \ifdefempty{\insertsubsection}{}{\vidal@sep\insertsubsection}%
+}
+
+% ---- Sources --------------------------------------------------------------
+% \slidesources{text}: source credits set small and grey in the strip to the
+% right of the body, running bottom to top, centred on the body's height.
+% Long credits wrap onto a second line rather than running past the body.
+% Use inside a frame.
+\def\vidal@sourcesx{0.42cm}     % centre of the strip, from the right edge
+\def\vidal@sourcesw{6.6cm}      % line length before wrapping (just under the 6.78cm body height)
+\newcommand{\slidesources}[1]{%
+    \begin{tikzpicture}[remember picture, overlay]
+        \usebeamercolor{slide sources}%
+        \node[rotate=90, anchor=center, inner sep=0pt, align=center,
+              text width=\vidal@sourcesw, text=slide sources.fg,
+              font=\usebeamerfont{slide sources}]
+            at ([xshift=-\vidal@sourcesx,
+                 yshift=-0.5*\vidal@bodytop-0.5*\paperheight+0.5*\vidal@footh]current page.north east)
+            {\hyphenpenalty=10000 \exhyphenpenalty=10000 #1};
+    \end{tikzpicture}%
+}
+
+\newcommand{\contentslide}{%
+    % Title band: title text and colour line at fixed positions; the template
+    % itself only reserves the band's height, so the body always starts at
+    % \vidal@bodytop.
+    \setbeamertemplate{frametitle}{%
+        \begin{tikzpicture}[remember picture, overlay]
+            \node[anchor=west, inner sep=0pt, text width=\vidal@titlewidth, align=left]
+                at ([xshift=\vidal@titlex, yshift=-\vidal@titlemid]current page.north west)
+                {\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\strut\insertframetitle\strut};
+            \node[anchor=north west, inner sep=0pt]
+                at ([yshift=-\vidal@titleband]current page.north west)
+                {\includegraphics[width=\vidal@linewidth\paperwidth, height=\vidal@linethick]{images/title_color_line.png}};
+        \end{tikzpicture}%
+        \vspace*{\dimexpr\vidal@bodytop-\vidal@bodyfudge\relax}%
+    }
+
+    % Footer: a hairline across the page from the left edge to the logo; below
+    % it, on one baseline centred on the logo's midline,
+    %   author | title | part > section > subsection          number | logo
+    % Fields are separated by the same short dividers.
+    \setbeamertemplate{footline}{%
+        \begin{tikzpicture}[remember picture, overlay,
+                            vidal@field/.style={anchor=base west, inner sep=0pt},
+                            vidal@divider/.style={vidalfootrule, line width=0.4pt}]
+            \coordinate (vidal@sw) at (current page.south west);
+            \node[anchor=east, inner sep=0pt]
+                at ([xshift=-\vidal@logox, yshift=\vidal@footmid]current page.south east)
+                (vidal@logo) {\includegraphics[height=\vidal@logoh]{images/UniversityofPennsylvania_FullLogo_RGB.eps}};
+            \coordinate (vidal@mid)  at (vidal@logo.west -| vidal@sw);              % left edge, logo midline
+            \coordinate (vidal@base) at ([yshift=-\vidal@footbase]vidal@mid);       % footer baseline
+            \coordinate (vidal@div)  at ([xshift=-\vidal@rulegap]vidal@logo.west);  % divider before the logo
+            \coordinate (vidal@hl)   at ([yshift=\vidal@footh]vidal@sw);            % hairline height
+            % hairline, from the left edge of the page to the logo divider
+            \draw[vidal@divider] (vidal@hl) -- (vidal@div |- vidal@hl);
+            % author | title | breadcrumb
+            \node[vidal@field] (vidal@author) at ([xshift=\vidal@foottextx]vidal@base)
+                {\usebeamerfont{footline}\usebeamercolor[fg]{footline}\insertshortauthor};
+            \coordinate (vidal@d1) at ([xshift=\vidal@rulegap]vidal@author.east |- vidal@mid);
+            \draw[vidal@divider] ([yshift=-\vidal@divh]vidal@d1) -- ([yshift=\vidal@divh]vidal@d1);
+            \node[vidal@field] (vidal@title) at ([xshift=\vidal@rulegap]vidal@d1 |- vidal@base)
+                {\usebeamerfont{footline}\usebeamercolor[fg]{footline}\insertshorttitle};
+            \coordinate (vidal@d2) at ([xshift=\vidal@rulegap]vidal@title.east |- vidal@mid);
+            \draw[vidal@divider] ([yshift=-\vidal@divh]vidal@d2) -- ([yshift=\vidal@divh]vidal@d2);
+            \node[vidal@field] at ([xshift=\vidal@rulegap]vidal@d2 |- vidal@base)
+                {\usebeamerfont{footline}\usebeamercolor[fg]{footline}\vidalbreadcrumb};
+            % slide number | logo
+            \node[anchor=base east, inner sep=0pt] at ([xshift=-\vidal@rulegap]vidal@div |- vidal@base)
+                {\usebeamerfont{page number in head/foot}\usebeamercolor[fg]{page number in head/foot}\insertframenumber};
+            \draw[vidal@divider] ([yshift=-\vidal@divh]vidal@div) -- ([yshift=\vidal@divh]vidal@div);
+        \end{tikzpicture}%
+        \rule{0pt}{\vidal@footh}% reserve the footer height
+    }
+
+    \setbeamertemplate{background}{%
+        % Blank
+    }
+}
+
+% Beamer starts the frame body a little below the frametitle box; this offset
+% is subtracted so the first line of the body sits at \vidal@bodytop.
+\def\vidal@bodyfudge{0.80cm}

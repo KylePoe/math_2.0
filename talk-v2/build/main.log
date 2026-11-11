@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  10 NOV 2026 17:52
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  11 NOV 2026 16:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1110,29 +1110,89 @@ Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
 \TX@delta=\dimen348
 \TX@cols=\count389
 \TX@ftn=\toks64
-) (build/main.aux)
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/qrcode/qrcode.sty
+Package: qrcode 2015/01/08 v1.51 QR code generation
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks65
+\XKV@tempa@toks=\toks66
+)
+\XKV@depth=\count390
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\c@qr@i=\count391
+\c@qr@j=\count392
+\qr@a=\count393
+\qr@b=\count394
+\qr@c=\count395
+\qr@for@depth=\count396
+\qr@for@maxdepth=\count397
+\qr@for@start=\count398
+\qr@for@end=\count399
+\qr@for@step=\count400
+\qr@newforcount=\count401
+\qr@newforcount=\count402
+\qr@desiredheight=\skip82
+\qr@modulesize=\skip83
+\qr@minipagewidth=\skip84
+\c@maski=\count403
+\c@maskj=\count404
+\c@totalones=\count405
+\c@penaltyi=\count406
+\c@penaltyii=\count407
+\c@penaltyiii=\count408
+\c@penaltyiv=\count409
+\c@qr@hexchars=\count410
+\qr@newforcount=\count411
+\c@qr@divisionsremaining=\count412
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/fontawesome5/fontawesome5.sty
+Package: fontawesome5 2022/05/02 v5.15.4 Font Awesome 5
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/fontawesome5/fontawesome5-utex-he
+lper.sty
+Package: fontawesome5-utex-helper 2022/05/02 v5.15.4 uTeX helper for fontawesom
+e5
+LaTeX Font Info:    Trying to load font information for TU+fontawesomefree on i
+nput line 69.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/fontawesome5/tufontawesomefree.fd
+)
+LaTeX Font Info:    Trying to load font information for TU+fontawesomebrands on
+ input line 70.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/fontawesome5/tufontawesomebrands.
+fd))) (build/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1168,59 +1228,61 @@ LaTeX Font Info:    ... okay on input line 96.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 96.
+Package hyperref Info: Link coloring OFF on input line 123.
 (build/main.out) (build/main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 96.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 123.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 96.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 123.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/Georgia(0)/m/n on input line 96.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 96.
+(Font)                  OT1/cmss/m/n --> TU/Georgia(0)/m/n on input line 123.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/OpenSans(0)/b/n on input line 96.
+(Font)                  OT1/cmr/bx/n --> TU/OpenSans(0)/b/n on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/OpenSans(0)/b/n on input line 96.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 96.
+(Font)                  OT1/cmr/bx/n --> TU/OpenSans(0)/b/n on input line 123.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/OpenSans(0)/m/n on input line 96.
+(Font)                  OT1/cmss/m/n --> TU/OpenSans(0)/m/n on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/OpenSans(0)/m/n on input line 96.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 96.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/OpenSans(0)/m/it on input line 96.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/OpenSans(0)/m/it on input line 96.
+(Font)                  OT1/cmss/bx/n --> TU/OpenSans(0)/m/n on input line 123.
 
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 96.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 123.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/OpenSans(0)/m/it on input line 123.
+
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/OpenSans(0)/m/it on input line 123
+.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 96.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 96.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 123.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
 (Font)                  TU/OpenSans(0)/m/n --> TU/OpenSans(0)/b/n on input line
- 96.
+ 123.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  TU/OpenSans(0)/m/it --> TU/OpenSans(0)/b/it on input li
-ne 96.
+ne 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> TU/Georgia(0)/b/n on input line 96.
+(Font)                  OT1/cmss/b/n --> TU/Georgia(0)/b/n on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
 (Font)                  TU/OpenSans(0)/b/n --> TU/OpenSans(0)/b/n on input line
- 96.
+ 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  TU/OpenSans(0)/m/n --> TU/OpenSans(0)/b/n on input line
- 96.
+ 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  TU/OpenSans(0)/m/it --> TU/OpenSans(0)/b/it on input li
-ne 96.
+ne 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  TU/lmtt/m/n --> TU/lmtt/b/n on input line 96.
+(Font)                  TU/lmtt/m/n --> TU/lmtt/b/n on input line 123.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -1253,103 +1315,104 @@ Package fontspec Info:
 
 \symlegacymaths=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 96.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 96.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 96.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 96.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 96.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 96.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 96.
-LaTeX Font Info:    Redeclaring math accent \check on input line 96.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 96.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 96.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 96.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 96.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 96.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 96.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 96.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 96.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 96.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 96.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 96.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 96.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 96.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 96.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 96.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 96.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 123.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 123.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 123.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 123.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 123.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 123.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 123.
+LaTeX Font Info:    Redeclaring math accent \check on input line 123.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 123.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 123.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 123.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 123.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 123.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 123.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 123.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 123.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 123.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 123.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 123.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 123.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 123.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 123.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 123.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 123.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 96.
+(Font)              `operators' in the math version `normal' on input line 123.
+
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/Georgia(0)/m/n on input line 96.
+(Font)                  OT1/cmss/m/n --> TU/Georgia(0)/m/n on input line 123.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 96.
+(Font)              `operators' in the math version `bold' on input line 123.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> TU/Georgia(0)/m/n on input line 96.
+(Font)                  OT1/cmss/b/n --> TU/Georgia(0)/m/n on input line 123.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/Georgia(0)/m/n --> TU/Georgia(0)/m/n on input line 9
-6.
-LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 96.
+(Font)                  TU/Georgia(0)/m/n --> TU/Georgia(0)/m/n on input line 1
+23.
+LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  TU/OpenSans(0)/m/it --> TU/Georgia(0)/m/it on input lin
-e 96.
+e 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  TU/OpenSans(0)/b/n --> TU/Georgia(0)/b/n on input line 
-96.
+123.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  TU/OpenSans(0)/m/n --> TU/OpenSans(0)/m/n on input line
- 96.
+ 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  TU/lmtt/m/n --> TU/lmtt/m/n on input line 96.
+(Font)                  TU/lmtt/m/n --> TU/lmtt/m/n on input line 123.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/Georgia(0)/m/n --> TU/Georgia(0)/b/n on input line 9
-6.
+(Font)                  TU/Georgia(0)/m/n --> TU/Georgia(0)/b/n on input line 1
+23.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  TU/OpenSans(0)/b/it --> TU/Georgia(0)/b/it on input lin
-e 96.
+e 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  TU/OpenSans(0)/b/n --> TU/OpenSans(0)/b/n on input line
- 96.
+ 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  TU/lmtt/b/n --> TU/lmtt/b/n on input line 96.
+(Font)                  TU/lmtt/b/n --> TU/lmtt/b/n on input line 123.
 
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 (build/main.nav)
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 4.14833pt on input line 96.
+(Font)              scaled to size 4.14833pt on input line 123.
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 5.80766pt on input line 96.
+(Font)              scaled to size 5.80766pt on input line 123.
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 20.64209pt on input line 101.
+(Font)              scaled to size 20.64209pt on input line 128.
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--101
+Underfull \hbox (badness 10000) in paragraph at lines 128--128
  [][][]\TU/OpenSans(0)/m/n/24.88 Math 2.0
  []
 
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 11.94717pt on input line 101.
+(Font)              scaled to size 11.94717pt on input line 128.
 
-Underfull \hbox (badness 2221) in paragraph at lines 101--101
+Underfull \hbox (badness 2221) in paragraph at lines 128--128
  []\TU/OpenSans(0)/m/n/14.4 From Society to the Lab
  []
 
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 9.956pt on input line 101.
+(Font)              scaled to size 9.956pt on input line 128.
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--101
+Underfull \hbox (badness 10000) in paragraph at lines 128--128
  []\TU/OpenSans(0)/m/n/12 Kyle Poe
  []
 
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 7.467pt on input line 101.
+(Font)              scaled to size 7.467pt on input line 128.
 
-Underfull \hbox (badness 2213) in paragraph at lines 101--101
+Underfull \hbox (badness 2213) in paragraph at lines 128--128
  []\TU/OpenSans(0)/m/n/9 Vidal Lab, University of Pennsylvania
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--101
+Underfull \hbox (badness 10000) in paragraph at lines 128--128
  []\TU/OpenSans(0)/m/n/9 November 11, 2026
  []
 
@@ -1359,20 +1422,31 @@ File: PennEngineering-template-2023/ppt/media/image2.jpg Graphic file (type bmp
 )
 <PennEngineering-template-2023/ppt/media/image2.jpg>
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 3.31866pt on input line 101.
+(Font)              scaled to size 3.31866pt on input line 128.
 [1
 
-] (./sections/00-opener-navier-stokes.tex
-Invalid UTF-8 byte or sequence at line 23 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 23 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 23 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 23 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 23 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 23 replaced by U+FFFD.
+]
+Invalid UTF-8 byte or sequence at line 153 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 153 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 153 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 153 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 153 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 153 replaced by U+FFFD.
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 6.63733pt on input line 23.
+(Font)              scaled to size 6.63733pt on input line 153.
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
+(Font)              scaled to size 38.16464pt on input line 153.
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[2
+
+] (./sections/00-opener-navier-stokes.tex
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
 File: images/blowup_transparent.png Graphic file (type bmp)
 <images/blowup_transparent.png>
 File: images/announcement_images/nature_openai.png Graphic file (type bmp)
@@ -1395,7 +1469,7 @@ File: images/title_color_line.png Graphic file (type bmp)
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
-[2
+[3
 
 ]
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
@@ -1406,15 +1480,6 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
 (Font)              scaled to size 6.50671pt on input line 78.
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/it' will be
 (Font)              scaled to size 4.14833pt on input line 78.
-File: images/title_color_line.png Graphic file (type bmp)
-<images/title_color_line.png>
-
-
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
-[3
-
-]
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
 
@@ -1432,6 +1497,15 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
 [5
 
+]
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[6
+
 ]) (./sections/01-opener-paradigm.tex
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
@@ -1443,40 +1517,21 @@ File: images/title_color_line.png Graphic file (type bmp)
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
-[6
-
-]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
-(Font)              scaled to size 8.13339pt on input line 181.
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
-(Font)              scaled to size 4.47336pt on input line 181.
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 4.56316pt on input line 181.
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
-(Font)              scaled to size 4.88004pt on input line 181.
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 4.39723pt on input line 181.
-File: images/title_color_line.png Graphic file (type bmp)
-<images/title_color_line.png>
-
-Overfull \vbox (6.88904pt too high) detected at line 181
- []
-
-
-
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
 [7
 
 ]
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
+(Font)              scaled to size 8.13339pt on input line 195.
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
+(Font)              scaled to size 4.47336pt on input line 195.
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
+(Font)              scaled to size 4.56316pt on input line 195.
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
 
-Overfull \vbox (13.14868pt too high) detected at line 242
+Overfull \vbox (6.88904pt too high) detected at line 195
  []
 
 
@@ -1485,17 +1540,17 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
 [8
 
-]) (./sections/02-opener-math-2.tex
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
-File: images/tao_math20.png Graphic file (type bmp)
-<images/tao_math20.png>
-File: images/terry_tao.png Graphic file (type bmp)
-<images/terry_tao.png>
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/it' will be
-(Font)              scaled to size 7.467pt on input line 44.
+]
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
+(Font)              scaled to size 4.88004pt on input line 195.
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
+(Font)              scaled to size 4.39723pt on input line 195.
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (6.88904pt too high) detected at line 195
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
@@ -1503,34 +1558,38 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 [9
 
 ]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
- (build/main.toc) (build/main.toc)
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (6.88904pt too high) detected at line 195
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
 [10
 
-])
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 11.61533pt on input line 125.
-
-
-File: PennEngineering-template-2023/ppt/media/image4.jpg Graphic file (type bmp
-)
-<PennEngineering-template-2023/ppt/media/image4.jpg>
-[11
-
-] (./sections/10-checking.tex
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
-(Font)              scaled to size 4.0667pt on input line 81.
+]
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (6.88904pt too high) detected at line 195
+ []
+
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[11
+
+]
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+Overfull \vbox (6.88904pt too high) detected at line 195
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
@@ -1538,27 +1597,25 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 [12
 
 ]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
- (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd)
-(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd)
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (6.88904pt too high) detected at line 195
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
 [13
 
-]) (./sections/11-provenance.tex
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
-(Font)              scaled to size 21.14682pt on input line 43.
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
-(Font)              scaled to size 7.32005pt on input line 43.
+]
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (6.88904pt too high) detected at line 195
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
@@ -1566,21 +1623,25 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 [14
 
 ]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (6.88904pt too high) detected at line 195
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
 [15
 
-]) (./sections/12-certificates.tex
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+]
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (6.88904pt too high) detected at line 195
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
@@ -1588,10 +1649,12 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 [16
 
 ]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (6.88904pt too high) detected at line 195
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
@@ -1599,10 +1662,12 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 [17
 
 ]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (6.88904pt too high) detected at line 195
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
@@ -1610,10 +1675,12 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 [18
 
 ]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (6.88904pt too high) detected at line 195
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
@@ -1621,10 +1688,12 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 [19
 
 ]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (6.88904pt too high) detected at line 195
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
@@ -1632,28 +1701,40 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 [20
 
 ]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (6.88904pt too high) detected at line 195
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
 [21
 
-])
-
-File: PennEngineering-template-2023/ppt/media/image4.jpg Graphic file (type bmp
-)
-<PennEngineering-template-2023/ppt/media/image4.jpg>
-[22
-
-] (./sections/20-learning-theory.tex
+]
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (13.14868pt too high) detected at line 267
+ []
+
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[22
+
+]
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+Overfull \vbox (13.14868pt too high) detected at line 267
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
@@ -1661,10 +1742,12 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 [23
 
 ]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (13.14868pt too high) detected at line 267
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
@@ -1672,21 +1755,25 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 [24
 
 ]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (13.14868pt too high) detected at line 267
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
 [25
 
-]) (./sections/21-workflow.tex
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+]
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (13.14868pt too high) detected at line 267
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
@@ -1694,10 +1781,12 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 [26
 
 ]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (13.14868pt too high) detected at line 267
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
@@ -1705,10 +1794,12 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 [27
 
 ]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (13.14868pt too high) detected at line 267
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
@@ -1716,10 +1807,12 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 [28
 
 ]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (13.14868pt too high) detected at line 267
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
@@ -1727,21 +1820,25 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 [29
 
 ]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (13.14868pt too high) detected at line 267
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
 [30
 
-]) (./sections/22-in-the-lab.tex
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+]
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (13.14868pt too high) detected at line 267
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
@@ -1749,10 +1846,12 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 [31
 
 ]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (13.14868pt too high) detected at line 267
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
@@ -1760,26 +1859,40 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 [32
 
 ]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
+
+Overfull \vbox (13.14868pt too high) detected at line 267
+ []
+
 
 
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
 [33
 
-])
-
-File: PennEngineering-template-2023/ppt/media/image4.jpg Graphic file (type bmp
-)
-<PennEngineering-template-2023/ppt/media/image4.jpg>
-[34
-
-] (./sections/30-closing.tex
+]) (./sections/02-opener-math-2.tex
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/tao_math20.png Graphic file (type bmp)
+<images/tao_math20.png>
+File: images/terry_tao.png Graphic file (type bmp)
+<images/terry_tao.png>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[34
+
+]
+File: images/tao_math20.png Graphic file (type bmp)
+<images/tao_math20.png>
+File: images/terry_tao.png Graphic file (type bmp)
+<images/terry_tao.png>
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/it' will be
+(Font)              scaled to size 7.467pt on input line 48.
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
 
@@ -1791,6 +1904,7 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 ]
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
+ (build/main.toc) (build/main.toc)
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
 
@@ -1799,20 +1913,29 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
 [36
 
-]
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
-File: images/title_color_line.png Graphic file (type bmp)
-<images/title_color_line.png>
+])
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
+(Font)              scaled to size 11.61533pt on input line 166.
 
 
-File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
-<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: PennEngineering-template-2023/ppt/media/image4.jpg Graphic file (type bmp
+)
+<PennEngineering-template-2023/ppt/media/image4.jpg>
 [37
 
-]
+] (./sections/10-reacting.tex
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: ../figures/04_capability_vs_valence.png Graphic file (type bmp)
+<../figures/04_capability_vs_valence.png>
+File: images/proofs_and_prompts_logo.png Graphic file (type bmp)
+<images/proofs_and_prompts_logo.png>
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
+(Font)              scaled to size 7.32005pt on input line 39.
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
+(Font)              scaled to size 16.59332pt on input line 39.
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
+(Font)              scaled to size 16.26678pt on input line 39.
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
 
@@ -1824,6 +1947,10 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 ]
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: ../figures/08_clusters.png Graphic file (type bmp)
+<../figures/08_clusters.png>
+File: ../figures/09_wordclouds.png Graphic file (type bmp)
+<../figures/09_wordclouds.png>
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
 
@@ -1832,20 +1959,11 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
 [39
 
-])
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\translate ' on input line 141.
-
-(./sections/99-backup.tex
+]) (./sections/11-problems.tex
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
-File: ../figures/04_capability_vs_valence.png Graphic file (type bmp)
-<../figures/04_capability_vs_valence.png>
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 18.25266pt on input line 26.
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
-(Font)              scaled to size 17.89346pt on input line 26.
+(Font)              scaled to size 4.0667pt on input line 82.
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
 
@@ -1857,10 +1975,8 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 ]
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
-File: ../figures/08_clusters.png Graphic file (type bmp)
-<../figures/08_clusters.png>
-File: ../figures/09_wordclouds.png Graphic file (type bmp)
-<../figures/09_wordclouds.png>
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd)
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
 
@@ -1883,6 +1999,8 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 ]
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
+(Font)              scaled to size 14.6401pt on input line 183.
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
 
@@ -1891,7 +2009,7 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
 [43
 
-]
+]) (./sections/12-formalization.tex
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
 File: images/title_color_line.png Graphic file (type bmp)
@@ -1916,6 +2034,10 @@ File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 ]
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
+(Font)              scaled to size 9.76007pt on input line 187.
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/it' will be
+(Font)              scaled to size 9.956pt on input line 187.
 File: images/title_color_line.png Graphic file (type bmp)
 <images/title_color_line.png>
 
@@ -1923,6 +2045,328 @@ File: images/title_color_line.png Graphic file (type bmp)
 File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
 <images/UniversityofPennsylvania_FullLogo_RGB.eps>
 [46
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[47
+
+]) (./sections/13-layers.tex
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+
+Missing character: There is no ; ("3B) in font nullfont!
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[48
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[49
+
+]) (./sections/14-settled.tex
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[50
+
+])
+
+File: PennEngineering-template-2023/ppt/media/image4.jpg Graphic file (type bmp
+)
+<PennEngineering-template-2023/ppt/media/image4.jpg>
+[51
+
+] (./sections/20-tools.tex
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[52
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[53
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/pfr_depgraph.png Graphic file (type bmp)
+<images/pfr_depgraph.png>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[54
+
+]) (./sections/21-statement.tex
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[55
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[56
+
+]) (./sections/22-proof.tex
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[57
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[58
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[59
+
+])
+
+File: PennEngineering-template-2023/ppt/media/image4.jpg Graphic file (type bmp
+)
+<PennEngineering-template-2023/ppt/media/image4.jpg>
+[60
+
+] (./sections/30-closing.tex
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[61
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[62
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[63
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[64
+
+])
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\translate ' on input line 184.
+
+(./sections/99-backup.tex
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[65
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
+(Font)              scaled to size 21.14682pt on input line 67.
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[66
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[67
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[68
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[69
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[70
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[71
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[72
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[73
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[74
+
+]
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+File: images/title_color_line.png Graphic file (type bmp)
+<images/title_color_line.png>
+
+
+File: images/UniversityofPennsylvania_FullLogo_RGB.eps Graphic file (type eps)
+<images/UniversityofPennsylvania_FullLogo_RGB.eps>
+[75
 
 ])
 \tf@nav=\write6
@@ -1940,15 +2384,15 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4ADAD37A7A299B52D402758E8CD91F82;1742.
+(rerunfilecheck)             Checksum: 21DBB989C1BD78E6B010BADC33BD9F00;2093.
  ) 
 Here is how much of TeX's memory you used:
- 39323 strings out of 473832
- 972437 string characters out of 5729482
- 1601675 words of memory out of 5000000
- 61591 multiletter control sequences out of 15000+600000
- 565605 words of font info for 120 fonts, out of 8000000 for 9000
+ 43418 strings out of 473832
+ 1032313 string characters out of 5729482
+ 1660953 words of memory out of 5000000
+ 65633 multiletter control sequences out of 15000+600000
+ 565693 words of font info for 131 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,16n,135p,725b,2296s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on build/main.xdv (46 pages, 850912 bytes).
+Output written on build/main.xdv (75 pages, 2446640 bytes).

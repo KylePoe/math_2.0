@@ -7,6 +7,12 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{booktabs, tabularx}
+\usepackage[nolinks]{qrcode}
+\usepackage{fontawesome5}  % \faRobot on the AI use disclosure slide
+% Resources slide: the public URL of talk-v2/RESOURCES.md in the slides' git
+% repository. Leave empty until the repository is public; the slide then shows
+% a placeholder instead of a QR code.
+\def\resourcesurl{}   % \def, not \newcommand, so the empty test on the slide works
 
 % Problem / response tables (Part I). Y = ragged-right X column.
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
@@ -71,6 +77,27 @@
                 font=\sffamily\footnotesize},
   lbl/.style={font=\sffamily\small\bfseries, text=#1, anchor=east, align=right},
 }
+% Proofs and Prompts cluster colours (eda.py SERIES, in cluster.py's valence
+% order), so slides that quote a cluster match the cluster figures.
+\definecolor{clPos}{HTML}{2A78D6}    % AI capable, positive
+\definecolor{clDoubt}{HTML}{EB6834}  % AI doubted, negative
+\definecolor{clNeg}{HTML}{1BAF7A}    % AI capable, negative
+% Key claim: an emphasized box for a slide's main takeaway (same look as the
+% thesis box). In TikZ: \node[keybox] {...};
+\tikzset{keybox/.style={draw=PennBlue!55, fill=PennBlue!4, line width=0.6pt, rounded corners=2pt,
+    inner xsep=0.35cm, inner ysep=0.22cm, align=center, font=\sffamily\small\bfseries, text=PennBlue}}
+% Blueprint graph nodes (Part II: Blueprints, The statement as consensus).
+% \node[bpnode=<colour>] ...; numbered badge: \node[bpnum=<colour>] ...;
+\tikzset{
+  bpnode/.style={draw=#1!60, fill=#1!8, rounded corners=3pt, line width=0.6pt,
+                 text width=2.35cm, minimum height=0.8cm, inner sep=0.09cm, align=center,
+                 font=\sffamily\scriptsize},
+  bpnode/.default=PennGreen,
+  bpnum/.style={circle, fill=#1, text=white, inner sep=0pt, minimum size=0.32cm,
+                font=\sffamily\tiny\bfseries},
+  bpnum/.default=black!60,
+  dep/.style={-Stealth, line width=0.6pt, draw=black!50},
+}
 % Legend dot for inline use.
 \newcommand{\tllegdot}[1]{\tikz[baseline=-0.6ex]\node[tldot=#1]{};}
 
@@ -112,30 +139,46 @@
 % Section files hold one frame per planned slide, with titles as working labels.
 
 \part{Opening}                                 %  7 min
+% AI use disclosure (Kyle, 2026-11-11), before the opener. No frame title, so
+% the title band is not drawn on this slide; a robot icon sits above the box.
+\begin{frame}
+  \vfill
+  \centering
+  {\color{PennBlue!80}\fontsize{46}{46}\selectfont\faRobot}\par\vspace{0.55cm}
+  \begin{tikzpicture}
+    \node[keybox, font=\sffamily\large, text=black!85, inner xsep=0.6cm, inner ysep=0.45cm]
+      {This presentation was prepared with the assistance of Claude Opus 5.5};
+  \end{tikzpicture}
+  \vfill
+\end{frame}
 \input{sections/00-opener-navier-stokes}       %  3   min
 \input{sections/01-opener-paradigm}            %  2.5 min
 \input{sections/02-opener-math-2}              %  1.5 min
 
-% talk-v2 (2026-11-10): Part I argues the integrity half of the thesis as a
-% chain (production scaled -> checking did not -> provenance is unknowable ->
-% stopgaps do not hold -> certificates do -> necessary, not sufficient).
-% Part II argues the productivity half, with Part I's pipeline as its spine.
+% talk-v2 (2026-11-11): Part I lets the community and the data speak:
+% how mathematicians are reacting -> the open societal problems they name ->
+% formalization as the remedy both sides accept -> the three layers it must
+% preserve (kernel, statement, proof) and where each broke -> what it settles.
+% Part II gives Kyle's argument and how it meets the tools: we have the tools;
+% the statement as the point of consensus; the proof as a scaffold.
 % See CHANGES.md for a slide-by-slide comparison with talk/.
-\part{\partnameone}                            % 14.5 min
+\part{\partnameone}                            % 16.5 min
 \sectionslide{Part I}{\partnameone}
-\input{sections/10-checking}                   %  3   min  (production scaled; checking did not)
-\input{sections/11-provenance}                 %  3.5 min  (disclosure does not hold; what institutions tried)
-\input{sections/12-certificates}               %  8   min  (certificates scale, got cheap, catch errors, feed AI; not sufficient)
+\input{sections/10-reacting}                   %  2.5 min  (sentiment; clusters)
+\input{sections/11-problems}                   %  5   min  (integrity; credit and careers; understanding; no clear solutions)
+\input{sections/12-formalization}              %  5.5 min  (universally acknowledged; in practice; cheap and finds errors; flywheel)
+\input{sections/13-layers}                     %  2.5 min  (when can it be trusted; where it failed)
+\input{sections/14-settled}                    %  1   min  (scorecard; how do we deploy it properly?)
 
-\part{\partnametwo}                            % 19.5 min
+\part{\partnametwo}                            % 17.5 min
 \sectionslide{Part II}{\partnametwo}
-\input{sections/20-learning-theory}            %  4   min  (it is starting; statement discipline; running example)
-\input{sections/21-workflow}                   %  9.5 min  (state, prove, check, understand and share; spectrum)
-\input{sections/22-in-the-lab}                 %  4   min  (beyond proofs, budget, checklist)
+\input{sections/20-tools}                      %  6.5 min  (the stack; the naive workflow; blueprints)
+\input{sections/21-statement}                  %  4.5 min  (consensus; translation)
+\input{sections/22-proof}                      %  6.5 min  (where proofs come from; interpretable lemmas; lemmas as understanding)
 
 \part{Closing}                                 %  3 min
 \sectionslide{}{Closing}
-\input{sections/30-closing}                    %  3   min
+\input{sections/30-closing}                    %  3   min  (summary; open problems; call to action; resources)
 
 \appendix
 \input{sections/99-backup}

@@ -7,6 +7,7 @@
 % The bracketed lead-in is an editorial paraphrase (Kyle), set in grey.
 \begin{frame}{Math 1.0 and Math 2.0}
   \centering
+  \vspace{-2em}
   \begin{tikzpicture}[x=1cm, y=1cm]
     % bounding box = visible extent of the figure, so it centres in the body
     \useasboundingbox (0.1,0) rectangle (14.16,-6.45);
@@ -28,20 +29,23 @@
     \node[anchor=north west, inner sep=0pt, font=\sffamily\scriptsize, text=black!60, text width=6.0cm, align=left]
       at ([yshift=-0.22cm]q.south west)
       {--- Terence Tao, \emph{Machine Assisted Proof},\\AIM Public Lecture, Caltech, 9 Oct 2026};
-    % thesis
+      \vspace{2em}
+    % thesis, appears on the second click (2026-11-11)
+    \only<2->{%
     \node[anchor=south, draw=PennBlue!55, fill=PennBlue!4, line width=0.6pt, rounded corners=2pt,
-          text width=11.4cm, inner xsep=0.3cm, inner ysep=0.2cm, align=left, font=\sffamily\small]
-      at (7.13,-6.45)
+          text width=12.4cm, inner xsep=0.3cm, inner ysep=0.2cm, align=left, font=\sffamily\small]
+      at (7.13,-7.1)
       {\emph{
-          AI will keep making proofs cheaper. Making formalization a standard step in research is how that abundance
-          raises both scientific integrity and individual productivity, instead of trading one for the other.
+          \hyphenpenalty=10000 Amidst the plethora of ethical concerns surrounding proliferation and normalization of the technology, AI is ushering in a new dominant paradigm for mathematical, and more broadly theoretical, research. Thoughtfully deployed, AI-assisted formalization tools will be the glue between human and machine understanding which ensures the integrity and alignment of future scientific enterprise.
+
+          % \!AI will keep making proofs cheaper. To capitalize on these gains without sacrificing scientific integrity or narrative control, (AI-assisted) formalization will need to be integrated into the researcher's toolbox.
       %   Gracefully navigating the transition to Math~2.0 requires
       %  reckoning with societal level issues as well as understanding emerging best practices to capitalize
       %  on AI-driven workflows while maintaining scientific integrity, foremost by the principled integration of autoformalization into the theorists toolbox.
-       }};
+       }};}
   \end{tikzpicture}
   \slidesources{Quote and diagram: T.~Tao, \emph{Machine Assisted Proof}, AIM Public Lecture Series, Caltech, 9 Oct 2026 (caltech.edu/campus-life-events/calendar/aim-public-lecture-series-terence-tao-1)}
-\end{frame}
+ \end{frame}
 
 % [0.5 min] Overview: one card per part, listing that part's sections. The
 % lists are generated from the section tree (\tableofcontents, subsections
@@ -54,7 +58,7 @@
 \setbeamercolor{section in toc}{fg=black!80}
 \newcommand{\overviewcard}[3]{% #1 label, #2 part name, #3 part number in the toc
   \begin{tikzpicture}[x=1cm, y=1cm, baseline={(0,0)}]
-    \def\w{6.6}\def\h{4.4}\def\hb{1.25}
+    \def\w{6.6}\def\h{5.6}\def\hb{1.25}
     \useasboundingbox (0,0) rectangle (\w,-\h);
     % card
     \fill[white, rounded corners=3pt,
@@ -72,14 +76,14 @@
       at (0.45,-0.6) {#2};
     % sections of this part
     \node[anchor=north west, inner sep=0pt, text width={\w cm - 0.9cm}, font=\sffamily\normalsize]
-      at (0.45,{-\hb-0.05}) {\tableofcontents[part=#3, hideallsubsections]};
+      at (0.45,{-\hb-0.05}) {\small\tableofcontents[part=#3, hideallsubsections]};
   \end{tikzpicture}%
 }
 \begin{frame}{The rest of this talk}
-  \vspace*{0.87cm}
+  \vspace*{0.2cm}
   \centering
-  \overviewcard{Part I}{\partnameone}{2}\hspace{0.7cm}%
-  \overviewcard{Part II}{\partnametwo}{3}
+  \overviewcard{Part I}{In \partnameone}{2}\hspace{0.7cm}%
+  \overviewcard{Part II}{In \partnametwo}{3}
 \end{frame}
 }
 

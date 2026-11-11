@@ -1,0 +1,174 @@
+% Part II > The proof. Reconceptualizes Part I's proof-fidelity criterion: a
+% proof is an auditable graph of formal statements (the scaffold), understood
+% when a reader can walk it without opening any proof. Order (Kyle,
+% 2026-11-11): the back and forth on the statement (previous section), then on
+% the proof, then how a proof decomposes into interpretable lemmas. Where formal proofs come from;
+% decomposing a proof into interpretable lemmas. No running example: this is
+% not a Lean tutorial (Kyle, 2026-11-11).
+% talk-v2, 2026-11-11.
+\section{Proof Fidelity}
+
+% [2 min] Where formal proofs come from (built 2026-11-11): from the statement
+% alone versus from a written proof. Sources: AlphaProof Nexus, arXiv
+% 2605.22763 (9/353 open Erdos, 44/492 OEIS, a few hundred dollars each;
+% research/02 E); FLT 11 days on Buzzard's project, ~6B output tokens
+% (Anthropic, self-reported; research/01); CFSG 24 days from 715 papers and
+% books (Axiom, self-reported); Meta textbook scaffold, arXiv 2604.03071;
+% sphere packing on a human blueprint (Math, Inc.); token estimates for
+% Navier-Stokes (~130B) and FLT (~6B) from AcadMathSci B.1 (different
+% problems: a discovery versus a formalization). Draft, Sketch, Prove (Jiang et
+% al., arXiv 2210.12283): sketches from informal proofs raise success on
+% competition problems from 20.9% to 39.3% (abstract; Isabelle, not Lean).
+% DeepSeek-Prover-V2 (arXiv 2504.21801): training starts by decomposing
+% problems into subgoals.
+\begin{frame}{Where formal proofs come from}
+  \centering
+  \begin{tikzpicture}[x=1cm, y=1cm,
+      mini/.style={draw=black!30, fill=white, rounded corners=2pt, line width=0.5pt,
+                   minimum height=0.6cm, inner sep=0.08cm, align=center, font=\sffamily\scriptsize},
+      colhd/.style={anchor=north west, inner sep=0pt, font=\sffamily\small\bfseries},
+      body/.style={anchor=north west, text width=6.5cm, align=flush left, inner sep=0pt, font=\sffamily\scriptsize}]
+    \useasboundingbox (0,0.1) rectangle (14.3,-5.9);
+    \draw[black!12, line width=0.5pt] (7.15,0.05) -- (7.15,-3.65);
+    % ================= from the statement alone =================
+    \node[colhd, text=tlPurple] at (0,0.05) {From the statement alone};
+    \node[mini, draw=PennBlue!55, fill=PennBlue!5, text width=1.7cm] (a1) at (1.0,-0.85) {Statement};
+    \node[mini, draw=PennGreen!55, fill=PennGreen!6, text width=1.7cm] (a2) at (5.2,-0.85) {Lean proof};
+    \draw[flow=tlPurple] (a1) -- node[note, above] {machine search} (a2);
+    \node[body] at (0,-1.45) {%
+      \begin{itemize}\setlength{\itemsep}{2pt}
+        \item AlphaProof Nexus: 9 of 353 open Erd\H{o}s problems and 44 of 492 OEIS conjectures, at a few hundred dollars each.
+        \item Works best on short, self-contained problems, where no written proof exists to follow.
+        \item Navier--Stokes, found from the statement: about 130B tokens.
+      \end{itemize}};
+    % ================= from a written proof =================
+    \node[colhd, text=PennGreen] at (7.5,0.05) {From a written proof};
+    \node[mini, draw=PennBlue!55, fill=PennBlue!5, text width=2.3cm] (b1) at (8.75,-0.85) {Statement + written proof};
+    \node[mini, draw=PennGreen!55, fill=PennGreen!6, text width=1.7cm] (b2) at (13.2,-0.85) {Lean proof};
+    \draw[flow=tlPurple] (b1) -- node[note, above] {fill in} (b2);
+    \node[body] at (7.5,-1.45) {%
+      \begin{itemize}\setlength{\itemsep}{2pt}
+        \item Fermat's Last Theorem in 11 days, on Buzzard's project and the literature: about 6B tokens.
+        \item The finite simple groups in 24 days, from 715 papers and books.
+        \item A 500-page textbook: all 340 targets in about a week. Sphere packing: built on a human blueprint.
+      \end{itemize}};
+    % ================= controlled comparisons =================
+    \draw[black!15, line width=0.4pt] (0,-3.8) -- (14.3,-3.8);
+    \node[anchor=north west, text width=14.2cm, align=flush left, inner sep=0pt, font=\sffamily\scriptsize] at (0,-4.0)
+      {\textbf{Like for like.} Sketches from informal proofs raised a prover's success on competition problems from 20.9\% to 39.3\%
+       (Draft, Sketch, Prove). {\color{black!55}Token counts are estimates for different problems.}\par\smallskip
+       \textbf{And the written proof supplies the lemmas:} its structure is what we decompose next.};
+    \node[keybox, anchor=south] at (7.15,-5.85) {A written proof is still the cheapest route to a formal one.};
+  \end{tikzpicture}
+  \slidesources{Google DeepMind, AlphaProof Nexus, arXiv 2605.22763 \textbullet{} Anthropic, FLT (Sep 2026) \textbullet{} Axiom, CFSG (Oct 2026) \textbullet{} Meta, arXiv 2604.03071 \textbullet{} AcadMathSci, Oct 2026 (B.1) \textbullet{} Jiang et al., arXiv 2210.12283}
+\end{frame}
+
+% [3 min] Decomposing a proof into interpretable lemmas (built 2026-11-11).
+% Diagram: a statement node T with dependencies A, B, C and one large proof
+% expands into lemmas L1, L2 that inherit some of those dependencies (L1: A, B;
+% L2: B), while T keeps C directly. Proofs are drawn as small dark blocks:
+% checked by the kernel, never read. Evidence: Axiom rebuilt its CFSG plan
+% when prerequisites were missing (research/01 s2); sphere packing's proof went
+% from about 450k to about 200k lines (Math, Inc., self-reported); LeanArchitect
+% extracts the graph from code but does not choose interpretable lemmas
+% (research/02 C). Key box wording agreed with Kyle (2026-11-11).
+\begin{frame}{Decomposing the proof into interpretable lemmas}
+  \centering
+  \begin{tikzpicture}[x=1cm, y=1cm,
+      dnode/.style={draw=black!35, fill=black!5, rounded corners=3pt, line width=0.5pt,
+                    minimum width=1.35cm, minimum height=0.5cm, inner sep=0.05cm, font=\sffamily\scriptsize, text=black!70},
+      lnode/.style={draw=PennGold!75, fill=PennGold!12, rounded corners=3pt, line width=0.6pt,
+                    minimum width=1.7cm, minimum height=0.55cm, inner sep=0.05cm, font=\sffamily\scriptsize},
+      tnode/.style={draw=PennBlue!60, fill=PennBlue!8, rounded corners=3pt, line width=0.6pt,
+                    minimum width=2.0cm, minimum height=0.6cm, inner sep=0.05cm, font=\sffamily\scriptsize\bfseries},
+      pf/.style={fill=black!70, draw=none},
+      colhd/.style={anchor=north west, inner sep=0pt, font=\sffamily\small\bfseries, text=black!75},
+      body/.style={anchor=north west, text width=6.6cm, align=flush left, inner sep=0pt, font=\sffamily\scriptsize}]
+    \useasboundingbox (0,0.1) rectangle (14.3,-5.9);
+    % ================= before =================
+    \node[anchor=north west, inner sep=0pt, font=\sffamily\scriptsize\bfseries, text=black!55] at (0,0.05) {Before: one statement, one opaque proof};
+    \foreach \n/\x/\t in {a/0.85/A, b/2.6/B, c/4.35/C} \node[dnode] (b\n) at (\x,-0.6) {\t};
+    \node[tnode] (bt) at (2.6,-1.6) {Theorem};
+    \foreach \n in {a,b,c} \draw[dep] (b\n) -- (bt);
+    \fill[pf] (1.85,-1.98) rectangle (3.35,-2.62);
+    \node[font=\sffamily\tiny, text=white] at (2.6,-2.3) {one long proof};
+    % ================= the move =================
+    \draw[-Stealth, line width=1.2pt, draw=PennGold!85!black] (5.45,-1.45) -- (6.85,-1.45);
+    \node[anchor=south, font=\sffamily\scriptsize\bfseries, text=PennGold!85!black] at (6.15,-1.4) {decompose};
+    % ================= after =================
+    \node[anchor=north west, inner sep=0pt, font=\sffamily\scriptsize\bfseries, text=black!55] at (7.3,0.05) {After: lemmas that inherit the dependencies};
+    \foreach \n/\x/\t in {a/8.1/A, b/10.2/B, c/13.2/C} \node[dnode] (a\n) at (\x,-0.6) {\t};
+    \node[lnode] (l1) at (8.6,-1.45) {Lemma 1};
+    \node[lnode] (l2) at (11.0,-1.45) {Lemma 2};
+    \node[tnode] (at) at (10.6,-2.3) {Theorem};
+    \draw[dep] (aa) -- (l1); \draw[dep] (ab) -- (l1); \draw[dep] (ab) -- (l2);
+    \draw[dep] (ac) -- (at);
+    \draw[dep] (l1) -- (at); \draw[dep] (l2) -- (at);
+    \foreach \n in {l1, l2, at} \fill[pf] ([xshift=-0.05cm, yshift=0.05cm]\n.south east) rectangle ++(-0.26,-0.18);
+    % legend
+    \node[anchor=north west, inner sep=0pt, font=\sffamily\tiny, text=black!60] at (7.3,-2.8)
+      {\tikz\fill[black!5, draw=black!35] (0,0) rectangle (0.25,0.15);\;depended on (library or earlier nodes)\quad
+       \tikz\fill[PennGold!12, draw=PennGold!75] (0,0) rectangle (0.25,0.15);\;new lemma\quad
+       \tikz\fill[black!70] (0,0) rectangle (0.25,0.15);\;proof: kernel-checked, unread};
+    % ================= when to split / who chooses =================
+    \draw[black!15, line width=0.4pt] (0,-3.15) -- (14.3,-3.15);
+    \node[colhd] at (0,-3.3) {When to split a node};
+    \node[body, text=PennRed!85!black] at (0,-3.65)
+      {\bfseries Proof fidelity: the lemma graph matches, not every line.};
+    \node[body] at (0,-3.82) {%
+      \begin{itemize}\setlength{\itemsep}{0pt}
+        \item Its statement is not a building block the audience can hold.
+        \item Its proof is long next to its statement: something is hidden.
+        \item Only statements are read; the route inside does not matter.
+      \end{itemize}};
+    \node[colhd] at (7.3,-3.3) {Who chooses the lemmas};
+    \node[body, text width=6.9cm] at (7.3,-3.7) {%
+      \begin{itemize}\setlength{\itemsep}{1pt}
+        \item Back and forth: the human proposes nodes; the machine fills them, fails, or proposes lemmas; the human keeps those that read clearly.
+        \item Tools extract the graph (LeanArchitect); none yet chooses interpretable lemmas.
+      \end{itemize}};
+    \node[keybox, anchor=south] at (7.15,-6) {Lemmas comprise the signature of human perspective and proof authorship.};
+  \end{tikzpicture}
+  \slidesources{Zhu et al., LeanArchitect, ITP 2026 \textbullet{} research note 02 (C, D)}
+\end{frame}
+
+% [2 min] Closer for Part II (built 2026-11-11; simplified and Lerario removed
+% at Kyle's request, relying on established thinkers). Sources: Axiom CFSG drew
+% on 715 papers and books (research/01 s2, self-reported); Stacks Project tags
+% (research/01 s3); Lean Atlas (Yanahama & Sannai, arXiv 2604.16347): review
+% load cut by 94-99% for PNT+, Carleson and Brownian Motion (27% for XMSS, 69%
+% for PhysLib; research/02 C). Thinkers, paraphrased: Thurston, "On proof and
+% progress in mathematics", Bull. AMS 30(2), 1994; Lakatos, Proofs and
+% Refutations, Cambridge UP, 1976 (proof as decomposing a conjecture into
+% subconjectures or lemmas); Parnas, CACM 15(12), 1972; Wirth, CACM 14(4), 1971.
+% The conclusion is scoped to the statement and proof criteria.
+\begin{frame}{Lemmas as the unit of understanding}
+  \centering
+  \begin{tikzpicture}[x=1cm, y=1cm,
+      colhd/.style={anchor=north west, inner sep=0pt, font=\sffamily\small\bfseries, text=black!75},
+      body/.style={anchor=north west, text width=6.6cm, align=flush left, inner sep=0pt, font=\sffamily\footnotesize}]
+    \useasboundingbox (0,0.1) rectangle (14.3,-5.9);
+    \node[anchor=north west, text width=14.2cm, align=flush left, inner sep=0pt, font=\sffamily\small] at (0,0.05)
+      {A proof is understood when a reader can walk its graph of lemmas: read each statement, and see why it
+       follows from those beneath it, without opening a proof.};
+    \draw[black!12, line width=0.5pt] (7.15,-1.05) -- (7.15,-4.55);
+    \node[colhd] at (0,-1.1) {We already work this way};
+    \node[body] at (0,-1.5) {%
+      \begin{itemize}\setlength{\itemsep}{2pt}
+        \item We cite results we have never read: the classification of finite simple groups rests on 715 papers and books.
+        \item Reference works are graphs of lemmas: the Stacks Project is cited by tag.
+        \item Many results in applied math and theoretical machine learning are not novel at the level of the lemma, but at the level of their \emph{assembly}.
+      \end{itemize}};
+    \node[colhd] at (7.5,-1.1) {Follows established thought};
+    \node[body] at (7.5,-1.6) {%
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item \textbf{Thurston} (1994): progress in mathematics is measured by human understanding, not by formal proof alone.
+        \item \textbf{Lakatos} (1976): a proof decomposes a conjecture into subconjectures, or lemmas.
+        \item \textbf{Parnas} (1972), \textbf{Wirth} (1971): use a component through its interface; refine one step at a time.
+      \end{itemize}};
+    \node[keybox, anchor=south, text width=12.6cm] at (7.15,-5.85)
+      {Principled blueprints, statements aligned lemma by lemma, and generated formal proofs:\\
+       enough for both understanding and integrity.};
+  \end{tikzpicture}
+  \slidesources{Axiom, CFSG (Oct 2026) and Stacks (Nov 2026) \textbullet{} W.~P.~Thurston, \emph{On proof and progress in mathematics}, Bull.\ AMS 30(2), 1994 \textbullet{} I.~Lakatos, \emph{Proofs and Refutations}, Cambridge UP, 1976 \textbullet{} D.~L.~Parnas, CACM 15(12), 1972 \textbullet{} N.~Wirth, CACM 14(4), 1971}
+\end{frame}

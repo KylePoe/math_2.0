@@ -1,0 +1,118 @@
+% Part II > The statement. Follows the Blueprints slide (end of "We have the
+% tools"). The statement as the point of semantic consensus between user and
+% machine: the informal and formal graphs have the same shape. Then
+% translating statements in both directions.
+% talk-v2, 2026-11-11.
+\section{Statement Fidelity}
+
+% [2 min] The statement as consensus (Kyle, 2026-11-11): the informal and
+% formal graphs have the same shape. Translating a node and then following a
+% dependency gives the same result as following the dependency and then
+% translating (a commuting square, not named as such). Highlighted square:
+% nodes 2 -> 3. Lean statements: Nat.minFac_prime, Nat.dvd_factorial and
+% Nat.exists_infinite_primes are Mathlib's; node 3 is a local lemma split out
+% for the illustration. The formal graph is mirrored left-right so the
+% translation arrows do not cross other nodes.
+\begin{frame}{The statement as the unit of consensus}
+  \centering
+  \begin{tikzpicture}[x=1cm, y=1cm,
+      lname/.style={font=\ttfamily\tiny, text=black!50}]
+    \useasboundingbox (0,0.1) rectangle (14.3,-5.9);
+    % highlighted square (nodes 2 and 3 in both graphs)
+    \fill[PennGold!10, rounded corners=4pt] (2.45,-0.4) rectangle (10.65,-2.55);
+    \node[anchor=north, font=\sffamily\small\bfseries, text=PennBlue] at (2.5,0.05) {Informal: what the reader checks};
+    \node[anchor=north, font=\sffamily\small\bfseries, text=PennGreen] at (10.6,0.05) {Formal: what Lean checks};
+    % ---- informal graph --------------------------------------------------------
+    \node[bpnode=PennBlue] (i1) at (1.2,-0.95) {Every $n>1$ has a prime factor};
+    % Node 2 says "positive" (2026-11-11): Lean's version needs 0 < m, and m = 0
+    % breaks the informal claim. SPEAKER NOTE: linger here. Ask the room what
+    % would go wrong if "positive" were dropped; they will have checked statement
+    % fidelity themselves before it gets a name.
+    \node[bpnode=PennBlue] (i2) at (3.75,-0.95) {Every positive $m \le n$ divides $n!$};
+    \node[bpnode=PennBlue] (i3) at (3.75,-2.0) {A prime factor of $n!+1$ exceeds $n$};
+    \node[bpnode=PennBlue] (i4) at (2.45,-3.05) {For every $n$, there is a prime $p \ge n$};
+    % ---- formal graph (mirrored) -----------------------------------------------
+    \node[bpnode] (f2) at (9.35,-0.95) {\texttt{0<m}$\,\to\,$\texttt{m}$\,\le\,$\texttt{n}$\,\to$\\\texttt{m}$\,\mid\,$\texttt{n !}};
+    \node[bpnode] (f1) at (11.9,-0.95) {\texttt{n}$\,\ne 1 \to$\\\texttt{(minFac n).Prime}};
+    \node[bpnode] (f3) at (9.35,-2.0) {\texttt{p.Prime}$\,\to\,$\texttt{p}$\,\mid\,$\texttt{n !+1}\\$\to\,$\texttt{n<p}};
+    \node[bpnode] (f4) at (10.65,-3.05) {$\exists\,$\texttt{p,\,n}$\,\le\,$\texttt{p}$\,\wedge\,$\texttt{p.Prime}};
+    \foreach \n/\k in {i1/1, i2/2, i3/3, i4/4, f1/1, f2/2, f3/3, f4/4} \node[bpnum] at (\n.north west) {\k};
+    \node[lname, anchor=north] at (f4.south) {Nat.exists\_infinite\_primes};
+    % dependencies
+    \foreach \g in {i, f} {
+      \draw[dep] (\g2) -- (\g3);
+      \draw[dep] (\g3.south) -- (\g4.north);
+    }
+    \draw[dep] (i1.south) -- (i4.north west);
+    \draw[dep] (f1.south) -- (f4.north east);
+    % translation, on the highlighted square
+    \foreach \k in {2, 3} \draw[<->, >=Stealth, line width=0.7pt, draw=PennGold!90!black] (i\k.east) -- (f\k.west);
+    \node[note, fill=PennGold!10, inner sep=1pt] at (6.55,-1.47) {translate};
+    % ---- what it shows ---------------------------------------------------------
+    \node[anchor=north west, text width=8.6cm, align=flush left, inner sep=0pt, font=\sffamily\footnotesize] at (0,-3.85) {%
+      \begin{itemize}\setlength{\itemsep}{3pt}
+        \item Each node has two faces: a statement the reader understands, and one Lean checks.
+        \item The arrows match: follow 2 to 3 and translate, or translate and then follow, and you reach the same statement.
+        \item \textbf{Alignment:} every statement is understood directly by its audience, or supported logically by statements that are.
+      \end{itemize}};
+    % boxed (Kyle, 2026-11-11): how matching the graphs addresses the Navier--Stokes problem
+    \node[keybox, anchor=north east, text width=4.7cm, align=flush left, font=\sffamily\scriptsize, text=black!80]
+      at (14.2,-3.9)
+      {{\bfseries\color{PennBlue}This is the check Navier--Stokes was missing.} A Lean lemma assumed $m{+}5$ derivatives where
+       the paper's needed $m{+}4$. Comparing the two graphs node by node points to exactly that node.};
+  \end{tikzpicture}
+  \slidesources{Mathlib: \texttt{Nat.minFac\_prime}, \texttt{Nat.dvd\_factorial}, \texttt{Nat.exists\_infinite\_primes}; node 3 is a lemma split out for illustration \textbullet{} Bastounis, Circelli \& Hansen, arXiv 2610.08144}
+\end{frame}
+
+% [2.5 min] Translating statements in both directions (built 2026-11-11).
+% Reliability evidence: community audit of OpenAI's release (about 210 of 245
+% formalized families consistent at statement level; borism/openai-math-slop
+% #2); Baker (blog, 8 Oct 2026; an estimate); DriftBench (Mohammad & Sheikh,
+% The Faithfulness Gap, arXiv 2606.16541, June 2026, preprint): on 2,183 NL/Lean
+% pairs with planted drift, typechecking catches 41.2%, an LLM judge 63.3%,
+% their method 89.6% at 3.0% false positives; Bastounis, Circelli & Hansen
+% (faithfulness undecidable in general); OEIS issue #5226; Erdos #124 (Xena).
+% Lean conventions: Nat.sInf_empty, truncated Nat subtraction, div_zero, and
+% Mathlib assigns riemannZeta a value at 1. Kyle's point: these are reasons
+% to learn enough Lean to read one's own statements.
+\begin{frame}{Translating statements, both ways}
+  \centering
+  \begin{tikzpicture}[x=1cm, y=1cm,
+      colhd/.style={anchor=north west, inner sep=0pt, font=\sffamily\small\bfseries, text=black!75},
+      body/.style={anchor=north west, text width=6.6cm, align=flush left, inner sep=0pt, font=\sffamily\scriptsize}]
+    \useasboundingbox (0,0.1) rectangle (14.3,-5.9);
+    % ---- the two directions ------------------------------------------------------
+    \node[bpnode=PennBlue, text width=3.0cm, minimum height=0.9cm, font=\sffamily\footnotesize] (h) at (2.0,-0.88)
+      {Statement in words\\{\scriptsize\color{black!55}what the author means}};
+    \node[bpnode, text width=3.0cm, minimum height=0.9cm, font=\sffamily\footnotesize] (l) at (12.3,-0.88)
+      {Statement in Lean\\{\scriptsize\color{black!55}what the kernel checks}};
+    \draw[-Stealth, line width=0.8pt, draw=tlPurple!80] (h.north east) to[bend left=14]
+      node[above, font=\sffamily\scriptsize, text=tlPurple] {autoformalize} (l.north west);
+    \draw[-Stealth, line width=0.8pt, draw=tlPurple!80] (l.south west) to[bend left=14]
+      node[below, font=\sffamily\scriptsize, text=tlPurple] {back-translate} (h.south east);
+    \node[note, text width=5.4cm, align=center] at (7.15,-0.88)
+      {Both directions are now cheap and fluent. Prove2Me sends every statement back through an independent agent; Palomar runs an LLM check.};
+    % ---- how reliable ------------------------------------------------------------
+    \draw[black!12, line width=0.5pt] (0,-2.2) -- (14.3,-2.2);
+    \draw[black!12, line width=0.5pt] (7.15,-2.35) -- (7.15,-5.05);
+    \node[colhd] at (0,-2.4) {How reliable is it?};
+    \node[body] at (0,-2.85) {%
+      \begin{itemize}\setlength{\itemsep}{2pt}
+        \item \textbf{Mostly right.} An audit of OpenAI's release found about 210 of 245 formalized families consistent at the level of statements.
+        \item \textbf{Hard to check automatically.} An LLM judge caught 63\% of planted mistranslations (preprint). In general, faithfulness is undecidable.
+        \item \textbf{Errors have shipped:} the OEIS ``disproof''; Erd\H{o}s \#124.
+      \end{itemize}};
+    % ---- where fluent translations go wrong --------------------------------------
+    \node[colhd] at (7.5,-2.4) {Where a fluent translation can mislead};
+    \foreach \y/\code/\means in {
+        -2.9/{\texttt{sInf}\,$(\emptyset : \texttt{Set}\ \mathbb{N}) = 0$}/{an undefined minimum becomes $0$},
+        -3.35/{$(3 : \mathbb{N}) - 5 = 0$}/{subtraction of naturals stops at $0$},
+        -3.8/{$(1 : \mathbb{R}) / 0 = 0$}/{division by zero is $0$},
+        -4.25/{\texttt{riemannZeta 1}}/{has a value at the pole, by convention}} {
+      \node[anchor=north west, inner sep=0pt, font=\scriptsize] at (7.5,\y) {\code};
+      \node[anchor=north west, inner sep=0pt, font=\sffamily\scriptsize, text=black!65] at (10.5,\y) {\means};
+    }
+    \node[keybox, anchor=south] at (7.15,-5.85) {Authors need to know enough Lean to read their own statements.};
+  \end{tikzpicture}
+  \slidesources{Prove2Me, arXiv 2608.28433 \textbullet{} Tao, \emph{Palomar}, 18 Aug 2026 \textbullet{} borism/openai-math-slop, issue \#2 \textbullet{} Mohammad \& Sheikh, \emph{The Faithfulness Gap}, arXiv 2606.16541 (preprint) \textbullet{} Bastounis, Circelli \& Hansen, arXiv 2610.08144 \textbullet{} formal-conjectures \#5226 \textbullet{} Mathlib}
+\end{frame}

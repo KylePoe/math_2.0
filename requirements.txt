@@ -5,3 +5,5 @@ pandas
 pydantic>=2
 matplotlib
 scikit-learn
+scipy
+wordcloud

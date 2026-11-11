@@ -1,22 +1,138 @@
-% Closing: individual responsibility; full circle with the opener; call to action
-\section{Closing}
+% Closing: summary; open problems and future directions (deferred from Part
+% I's scorecard and from Part II); a call to action (merged with "Stay the
+% author"); resources, which replaces the discussion slide. 2026-11-11.
 
-\begin{frame}{Where this leaves us}
-  \stub{0.5}{Recap: (a) what is coming (Society), (b) how to take part (The Lab)}
+% [0.5 min] Summary (rewritten 2026-11-11 to be punchier and follow the talk):
+% one line per step of the argument, grouped by part, ending on the thesis.
+% Kyle's earlier bullets, for reference:
+%   - Usage of AI tools has emerged as the new norm in the mathematical
+%     sciences, but coherent guidance on best practices for adoption have yet
+%     to be thoroughly disseminated
+%   - The mathematical community agrees that formalization is a potential
+%     benefit which can curb the worst knock-on effects of AI usage,
+%     benefiting the integrity of our scientific enterprise
+%   - By viewing definitions, propositions, and lemmas as the base units of
+%     semantic understanding, a principled deployment of autoformalization
+%     tools with lean blueprints will lead to a healthier, more human-driven
+%     realization of AI-assisted mathematics
+\begin{frame}{Summary}
+  \centering
+  \begin{tikzpicture}[x=1cm, y=1cm,
+      part/.style={anchor=north east, inner sep=0pt, font=\sffamily\scriptsize\bfseries, text=black!45, align=right},
+      lead/.style={anchor=north west, inner sep=0pt, font=\sffamily\small\bfseries, text=PennBlue},
+      line/.style={anchor=north west, text width=10.2cm, align=flush left, inner sep=0pt, font=\sffamily\footnotesize, text=black!80}]
+    \useasboundingbox (0,0.1) rectangle (14.3,-5.9);
+    \node[part] at (2.3,0.0) {\MakeUppercase{\partnameone}};
+    \node[part] at (2.3,-2.85) {\MakeUppercase{\partnametwo}};
+    \draw[black!15, line width=0.5pt] (2.55,0.05) -- (2.55,-2.55);
+    \draw[black!15, line width=0.5pt] (2.55,-2.8) -- (2.55,-4.55);
+    \foreach \y/\l/\t in {
+        0.0/{A new norm, with open problems.}/{AI use is now routine in mathematics. Credit, careers, access and training remain unsolved.},
+        -0.85/{Formal verification has advocates in all three groups.}/{Formalization settles correctness: it is cheap, it catches errors, and AI gains follow it.},
+        -1.7/{Three criteria for trust.}/{Validity, statement fidelity and proof fidelity. Each has failed before.},
+        -2.85/{Blueprints, not chat.}/{Agree with the machine node by node, and read your statements in Lean.},
+        -3.7/{Lemmas are the unit of understanding.}/{Let the machine fill in the proofs; choose the lemmas that tell the story yourself.}} {
+      \node[lead] at (2.85,\y) {\l};
+      \node[line] at (2.85,\y-0.38) {\t};
+    }
+    \node[keybox, anchor=south, text width=13cm] at (7.15,-5.85)
+      {Thoughtfully deployed, AI-assisted formalization can \\provide the glue between human and machine understanding.};
+  \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{Proof abundance, insight scarcity}
-  \stub{1}{Full circle with the opener and Tao: certificates make proofs abundant; insight is what stays scarce, and it lives in individuals}
+% [1 min] Open problems and future directions (2026-11-11): left, what remains
+% open for the field (Part I's scorecard items that Part II does not address);
+% right, research directions this lab could take up. Sources: 11% funding
+% figure, Springer Nature survey via AcadMathSci; library coverage, research/03
+% s5; 63% LLM-judge detection, Mohammad & Sheikh, arXiv 2606.16541 (preprint,
+% planted errors); SLT, StatsMLlib, CvxLean as on the stack slide. Verified
+% code is one short bullet (Kyle: most of the audience works on theory).
+\begin{frame}{Open problems and future directions}
+  \centering
+  \begin{tikzpicture}[x=1cm, y=1cm,
+      colhd/.style={anchor=north west, inner sep=0pt, font=\sffamily\small\bfseries},
+      body/.style={anchor=north west, text width=6.6cm, align=flush left, inner sep=0pt, font=\sffamily\footnotesize}]
+    \useasboundingbox (0,0.1) rectangle (14.3,-5.9);
+    \draw[black!12, line width=0.5pt] (7.15,0.05) -- (7.15,-4.7);
+    \node[colhd, text=PennRed] at (0,0.05) {Open for the field};
+    \node[body] at (0,-0.45) {%
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item \textbf{Credit and careers.} Who had the idea is not a formal property. Priority and hiring are unsettled.
+        \item \textbf{Access and cost.} Only 11\% of researchers have institutional funding for their main AI tool.
+        \item \textbf{Coverage.} Libraries are thin in PDE and applied probability; requiring Lean today would leave those fields behind.
+        \item \textbf{Training.} How do students learn to prove when the machine proves?
+      \end{itemize}};
+    \node[colhd, text=PennBlue] at (7.5,0.05) {Future directions: things we could do};
+    \node[body] at (7.5,-0.45) {%
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item \textbf{Formalizing our work.} We can lead the charge in including lean certificates alongside our theoretical work, in particular when we have utilized AI tools.
+        \item \textbf{Choosing interpretable lemmas.} No tool yet picks them out of a machine proof: a learning and interpretability problem. Proof IP???
+        \item \textbf{Checking faithfulness.} An LLM judge catches 63\% of planted mistranslations (preprint).
+        \item \textbf{Verified code.} The same question for software: does the code meet its stated specification?
+      \end{itemize}};
+  \end{tikzpicture}
+  \slidesources{Springer Nature survey, via AcadMathSci, Oct 2026 \textbullet{} Mohammad \& Sheikh, arXiv 2606.16541 (preprint) \textbullet{} research notes 02--03}
 \end{frame}
 
-\begin{frame}{Stay the author}
-  \stub{1}{Individual responsibility: keep control of what is generated, keep your own insights, do not cede your perspective to AI}
+% [1 min] A call to action (2026-11-11): merges "Stay the author" and the call
+% to action. Kyle's sentence in the box. Deskilling: Bastani et al., PNAS
+% (students with unrestricted GPT-4 scored 17% lower once access was removed;
+% a guardrailed tutor largely avoided the harm). Narrowing: Hao et al., arXiv
+% 2412.07727 (topic range -4.6%, engagement -22%).
+\begin{frame}{Math 2.0: Three principles for survival}
+  \centering
+  \begin{tikzpicture}[x=1cm, y=1cm,
+      num/.style={circle, fill=PennRed, text=white, inner sep=0pt, minimum size=0.55cm,
+                  font=\sffamily\small\bfseries},
+      head/.style={anchor=north west, inner sep=0pt, font=\sffamily\small\bfseries},
+      body/.style={anchor=north west, text width=12.8cm, align=flush left, inner sep=0pt, font=\sffamily\footnotesize, text=black!80}]
+    \useasboundingbox (0,0.1) rectangle (14.3,-5.9);
+    \foreach \y/\n/\h/\b in {
+        -0.1/1/{Keep control of the statement.}/{Write the blueprint yourself, and learn enough Lean to read what you are certifying.},
+        -1.35/2/{Keep your perspective.}/{Let the machine prove, but choose the lemmas, write the explanation, and pick your own problems.},
+        -2.6/3/{Keep your head up.}/{Stay aware of changes in capability and the tool landscape, and always consider best scientific practices.}} {
+      \node[num] at (0.4,\y-0.25) {\n};
+      \node[head] at (1.0,\y) {\h};
+      \node[body] at (1.0,\y-0.45) {\b};
+    }
+    \node[keybox, anchor=south, font=\sffamily\normalsize\bfseries] at (7.15,-5.6)
+      {Math 2.0 is here. Lets make the best of it.};
+  \end{tikzpicture}
+  \slidesources{Bastani et al., PNAS \textbullet{} Hao et al., arXiv 2412.07727}
 \end{frame}
 
-\begin{frame}{A call to action}
-  \stub{0.5}{A few personal commitments for each person in the room}
-\end{frame}
-
-\begin{frame}{Discussion}
-  \stub{--}{Prompts to open the 15 minutes}
+% Resources (2026-11-11): replaces the discussion slide and stays up during
+% the 15-minute discussion. The QR code points to RESOURCES.md in the slides'
+% public repository (\resourcesurl in main.tex); every link on that page was
+% checked on 2026-11-11.
+\begin{frame}{Resources}
+  \centering
+  \begin{tikzpicture}[x=1cm, y=1cm,
+      colhd/.style={anchor=north west, inner sep=0pt, font=\sffamily\small\bfseries, text=black!75},
+      body/.style={anchor=north west, text width=4.3cm, align=flush left, inner sep=0pt, font=\sffamily\scriptsize, text=black!80}]
+    \useasboundingbox (0,0.1) rectangle (14.3,-5.9);
+    % QR code, or a placeholder until the repository URL is set
+    \node[anchor=north west, inner sep=0pt] (qr) at (0.2,-0.3) {%
+      \ifx\resourcesurl\empty
+        \tikz\node[draw=black!30, fill=black!4, minimum size=4.2cm, align=center, font=\sffamily\scriptsize, text=black!55]
+          {QR code to the\\resources page\\[2pt]set \texttt{\textbackslash resourcesurl}\\in main.tex};%
+      \else
+        \qrcode[height=4.2cm]{\resourcesurl}%
+      \fi};
+    \node[anchor=north, text width=4.4cm, align=center, inner sep=0pt, font=\sffamily\scriptsize, text=black!60]
+      at ([yshift=-0.2cm]qr.south) {Slides and every link};
+    % grouped list
+    \node[colhd] at (5.3,0.05) {Learn Lean};
+    \node[body] at (5.3,-0.4) {Mathematics in Lean\\Theorem Proving in Lean 4\\Natural Number Game\\Lean Zulip};
+    \node[colhd] at (9.9,0.05) {Blueprints};
+    \node[body] at (9.9,-0.4) {leanblueprint\\LeanArchitect\\Verso Blueprint\\Tao's PFR blueprint tour};
+    \node[colhd] at (5.3,-2.15) {Proving and checking};
+    \node[body] at (5.3,-2.6) {Comparator\\lean-lsp-mcp\\Prove2Me\\Palomar};
+    \node[colhd] at (9.9,-2.15) {Learning theory};
+    \node[body] at (9.9,-2.6) {SLT\\StatsMLlib\\CvxLean};
+    \node[colhd] at (5.3,-4.3) {Reading};
+    \node[body, text width=8.8cm] at (5.3,-4.75) {Thurston, \emph{On proof and progress in mathematics} (1994)\\
+      Lakatos, \emph{Proofs and Refutations} (1976)\\
+      Reisinger et al., AcadMathSci report (2026) \textbullet{} \emph{Proofs and Prompts}};
+  \end{tikzpicture}
 \end{frame}

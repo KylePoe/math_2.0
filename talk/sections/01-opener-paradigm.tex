@@ -111,7 +111,8 @@
 
 % [1 min] The AcadMathSci timeline (report Fig. 1), redrawn horizontally across
 % two pages: April--September, then October. Colours follow the original
-% categories. PREVIEW: layout still under review with Kyle.
+% categories. Animated (2026-11-11): the axis and legend come first, then one
+% event per click in date order (\only<k+1->).
 \begin{frame}{Timeline: AI Transforms the Mathematical Sciences}
   \centering
   \begin{tikzpicture}[x=1cm, y=1cm,
@@ -137,45 +138,58 @@
         at ({0.27+3.3*(\k-1)},-0.62) {\t};
     }
     % events: \tlevent{dot x}{leader end x}{box centre x}{box bottom y}{colour}{width}{title}{description}
+      \only<2->{%
       \tlevent{0.78}{0.78}{0.98}{0.30}{tlGreen}{2.6cm}
         {27 Apr · AI Leads Network launched}
-        {Academy for the Mathematical Sciences network of departmental AI leads (Birmingham)}
+        {Academy for the Mathematical Sciences network of departmental AI leads (Birmingham)}}
+      \only<3->{%
       \tlevent{2.41}{2.41}{1.79}{1.72}{tlBlue}{2.6cm}
         {20 May · Erdős unit-distance conjecture}
-        {Disproved by an internal model (OpenAI); Gowers: “a milestone”}
+        {Disproved by an internal model (OpenAI); Gowers: “a milestone”}}
+      \only<4->{%
       \tlevent{3.26}{3.26}{2.54}{2.92}{tlGreen}{2.6cm}
         {2 Jun · Leiden Declaration}
-        {Conduct standards for AI-assisted mathematics; later endorsed by the IMU}
+        {Conduct standards for AI-assisted mathematics; later endorsed by the IMU}}
+      \only<5->{%
       \tlevent{3.97}{3.97}{3.46}{4.34}{tlPurple}{2.6cm}
         {12 Jun · Frontier models suspended}
-        {US export controls bar foreign nationals for 18 days; restored 1 July}
+        {US export controls bar foreign nationals for 18 days; restored 1 July}}
+      \only<6->{%
       \tlevent{6.58}{6.58}{5.45}{0.30}{tlBlue}{2.6cm}
         {19 Jul · AI counterexamples}
-        {Jacobian conjecture fails in dimension 3; question of Grothendieck answered (July)}
+        {Jacobian conjecture fails in dimension 3; question of Grothendieck answered (July)}}
+      \only<7->{%
       \tlevent{6.93}{6.93}{5.99}{1.72}{tlGreen}{2.6cm}
         {24 Jul · Tao: “proof abundance”}
-        {ICM 2026 public lecture, Philadelphia}
+        {ICM 2026 public lecture, Philadelphia}}
+      \only<8->{%
       \tlevent{8.11}{7.42}{6.29}{2.92}{tlBlue}{2.6cm}
         {10 Aug · Riemann zeta zeros}
-        {Proven share on the critical line raised from 41.6\% to 67.2\% (Anthropic)}
+        {Proven share on the critical line raised from 41.6\% to 67.2\% (Anthropic)}}
+      \only<9->{%
       \tlevent{8.66}{7.73}{6.59}{4.34}{tlOrange}{2.6cm}
         {18 Aug · Palomar registry}
-        {Registry of Lean-verified results (Tao, Lean FRO, ICARM)}
+        {Registry of Lean-verified results (Tao, Lean FRO, ICARM)}}
+      \only<10->{%
       \tlevent{10.22}{10.22}{9.47}{2.92}{tlBlue}{2.6cm}
         {4 Sep · Fermat’s Last Theorem in Lean}
-        {AI agents complete formalisation in 11 days (Anthropic)}
+        {AI agents complete formalisation in 11 days (Anthropic)}}
+      \only<11->{%
       \tlevent{10.92}{10.92}{10.99}{4.34}{tlBlue}{2.6cm}
         {8 Sep · Navier–Stokes blow-up}
-        {Forced case; \textasciitilde10,000 agents, 88 hours (OpenAI)}
+        {Forced case; \textasciitilde10,000 agents, 88 hours (OpenAI)}}
+      \only<12->{%
       \tlevent{11.46}{11.46}{12.53}{1.72}{tlGreen}{2.6cm}
         {11 Sep · “A Severe Misalignment”}
-        {Statement by 28 Fields Medallists}
+        {Statement by 28 Fields Medallists}}
+      \only<13->{%
       \tlevent{13.75}{13.75}{13.15}{0.30}{tlGreen}{2.6cm}
         {24 Sep · ICIAM statement}
-        {“Discovery, Understanding and Trust”}
+        {“Discovery, Understanding and Trust”}}
+      \only<14->{%
       \tlevent{14.63}{14.60}{13.47}{2.92}{tlGreen}{2.6cm}
         {29 Sep · AGMAI release guidelines}
-        {Advisory Group on Mathematics and AI, for AI labs}
+        {Advisory Group on Mathematics and AI, for AI labs}}
   \end{tikzpicture}
   \slidesources{Adapted from Reisinger et al., \emph{The Mathematical Sciences in an AI-enabled World}, AcadMathSci, pre-publication draft, Oct 2026, Fig.~1 (April--September 2026)}
 \end{frame}
@@ -204,39 +218,50 @@
         at ({0.27+3.3*(\k-1)},-0.62) {\t};
     }
     % events: \tlevent{dot x}{leader end x}{box centre x}{box bottom y}{colour}{width}{title}{description}
+      \only<2->{%
       \tlevent{0.24}{0.27}{1.60}{4.79}{tlOrange}{3.0cm}
         {1 Oct · arXiv caps submissions}
-        {Two per submitter per month}
+        {Two per submitter per month}}
+      \only<3->{%
       \tlevent{2.64}{2.64}{1.95}{3.59}{tlBlue}{3.0cm}
-        {6 Oct · 719 manuscripts released}
-        {372 result families (OpenAI); three withdrawn next day}
+        {6 Oct · 722 manuscripts released}
+        {Three withdrawn within a day, leaving 719 in 372 result families (OpenAI)}}
+      \only<4->{%
       \tlevent{2.94}{3.79}{5.13}{4.79}{tlOrange}{3.0cm}
         {6 Oct · Navier–Stokes “lost in translation”}
-        {Lean statement differs from the paper (Bastounis, Circelli, Hansen)}
+        {Lean statement differs from the paper (Bastounis, Circelli, Hansen)}}
+      \only<5->{%
       \tlevent{3.24}{3.80}{5.13}{1.94}{tlPurple}{3.0cm}
         {6 Oct · AI for Math Fund, \$17.1M}
-        {XTX Markets and Renaissance Philanthropy; 22 projects, fund now \$35.1M}
+        {XTX Markets and Renaissance Philanthropy; 22 projects, fund now \$35.1M}}
+      \only<6->{%
       \tlevent{6.49}{6.49}{5.33}{0.30}{tlBlue}{3.0cm}
         {14 Oct · First Proof, batch 3}
-        {Best system solves 9 of 10 research problems}
+        {Best system solves 9 of 10 research problems}}
+      \only<7->{%
       \tlevent{6.97}{6.97}{5.76}{3.59}{tlPurple}{3.0cm}
         {15 Oct · Simons Foundation, \$15M}
-        {Initiative with Anthropic and OpenAI to evaluate AI-produced results}
+        {Initiative with Anthropic and OpenAI to evaluate AI-produced results}}
+      \only<8->{%
       \tlevent{7.45}{7.45}{8.76}{4.79}{tlPurple}{3.0cm}
         {16 Oct · SAIR Open Math OS}
-        {Free open models for academics; first step to an open maths model}
+        {Free open models for academics; first step to an open maths model}}
+      \only<9->{%
       \tlevent{8.89}{8.89}{9.21}{3.59}{tlOrange}{3.0cm}
         {19 Oct · Probability journals pause}
-        {Six journals suspend new submissions until 8 November}
+        {Six journals suspend new submissions until 8 November}}
+      \only<10->{%
       \tlevent{12.26}{12.26}{11.01}{0.30}{tlBlue}{3.0cm}
         {26 Oct · OpenAI: three new results}
-        {Claims local smoothing (hence Kakeya) in all dimensions, ETH false, 4D gauge theory; released via expert “shepherds”}
+        {Claims local smoothing (hence Kakeya) in all dimensions, ETH false, 4D gauge theory; released via expert “shepherds”}}
+      \only<11->{%
       \tlevent{12.74}{12.74}{11.96}{1.94}{tlPurple}{3.0cm}
         {27 Oct · XTX Markets: £5.5M in grants}
-        {£5M for a Langlands Lab for AI-assisted mathematics at Imperial (Buzzard); £500k to ICMS on AI access and training needs}
+        {£5M for a Langlands Lab for AI-assisted mathematics at Imperial (Buzzard); £500k to ICMS on AI access and training needs}}
+      \only<12->{%
       \tlevent{13.70}{13.70}{13.21}{4.79}{tlGreen}{3.0cm}
         {29 Oct · Royal Society event}
-        {“Mathematics in the Age of AI”, London and live-streamed}
+        {“Mathematics in the Age of AI”, London and live-streamed}}
   \end{tikzpicture}
   \slidesources{Adapted from Reisinger et al., \emph{The Mathematical Sciences in an AI-enabled World}, AcadMathSci, pre-publication draft, Oct 2026, Fig.~1 (October 2026)}
 \end{frame}
